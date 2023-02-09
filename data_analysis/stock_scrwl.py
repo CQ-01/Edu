@@ -109,11 +109,8 @@ sheet = wb['종목']
 new_rows = list(sheet.rows)[1:]
 
 for row in new_rows:
-  row[1].value = img
-  row[0].value = png
-
-url = 'https://ssl.pstatic.net/imgfinance/chart/item/area/year3/' + f'{img}.png'
-png = f"{stk}.png"
-urllib.request.urlretrieve(url, png)
-
-list(row[0].value)
+  img = row[1].value
+  stk = row[0].value
+  url = "https://ssl.pstatic.net/imgfinance/chart/item/area/year3/" + f"{img}.png"
+  png = f"{stk}.png"
+  urllib.request.urlretrieve(url, png)
