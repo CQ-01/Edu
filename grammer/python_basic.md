@@ -34,3 +34,62 @@ You can organize your Python code into reusable modules using the `import` state
 
 ## Exception Handling
 Python provides a mechanism for handling errors and exceptions using the `try` and `except` statements.
+
+
+Iteration:
+
+enumerate
+zip
+reversed
+sorted
+map
+filter
+reduce
+Data type conversion:
+
+int
+float
+str
+list
+tuple
+dict
+set
+frozenset
+Mathematical functions:
+
+abs
+divmod
+pow
+round
+sum
+min
+max
+String manipulation:
+
+len
+str.upper
+str.lower
+str.strip
+str.replace
+str.split
+str.join
+Input and Output:
+
+print
+input
+open
+file.read
+file.write
+File and Directory Management:
+
+os.getcwd
+os.chdir
+os.mkdir
+os.rmdir
+os.listdir
+Exception Handling:
+
+try
+except
+finally
+raise
