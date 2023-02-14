@@ -1,95 +1,95 @@
-# Python Basic Grammar
+# Python 기본 문법
 
-## Variables
-In Python, you can assign values to variables using the equal sign (=). For example:
-x = 5
+## 변수
+"="를 이용해 변수를 할당할 수 있다.
+ex) x = 5
 
-## Data Types
-Python has several built-in data types, including:
-- Numbers (integers, floats)
-- Strings
-- Lists
-- Dictionaries
-- Booleans
+## 자료형
+다음과 같은 자료형이 있다.
+- 숫자 (integers, floats)
+- 문자(Strings)
+- 리스트
+- 딕셔너리
+- Booleans(T/F)
 
-## Operators
-Python supports various mathematical and logical operators, such as:
-- Addition (+)
-- Subtraction (-)
-- Multiplication (*)
-- Division (/)
-- Modulo (%)
+## 연산자
+다음과 같은 수학/논리적 연산자가 있다.
+- 덧셈 (+)
+- 뺄셈 (-)
+- 곱셈 (*)
+- 제곱수 (**)
+- 나눗셈 (/)
+- 몫 (//)
+- 나머지 (%)
 
-## Control Flow
-Python provides several control flow statements to control the flow of execution in a program, including:
+## 조건문
 - `if`
 - `else`
-- `for` loops
+- `for` 반복문
 
-## Functions
-In Python, you can define your own functions using the `def` keyword. Functions are blocks of reusable code that can be called with specific arguments.
+## 함수
+`def` 키워드를 이용해 고유의 함수(재사용할 수 있는 코드 모음)를 만들 수 있다.
 
-## Modules
-You can organize your Python code into reusable modules using the `import` statement.
+## 모듈
+`import` 를 이용해 파이썬 코드들을 모아 모듈을 만들 수도 있고, 타인이 만든 모듈을 가져와 사용할 수도 있다.
 
-## Exception Handling
-Python provides a mechanism for handling errors and exceptions using the `try` and `except` statements.
+## 예외 처리
+`try` 와 `except` 를 이용해 에러발생이나 예외 시 동작을 설정할 수 있다.
 
+## 잊기 쉬운 함수
+### Iteration
+- enumerate
+- zip
+- reversed
+- sorted
+- map
+- filter
+- reduce
 
-Iteration:
+### Data type conversion
+- int
+- float
+- str
+- list
+- tuple
+- dict
+- set
+- frozenset
 
-enumerate
-zip
-reversed
-sorted
-map
-filter
-reduce
-Data type conversion:
+### Mathematical functions
+- abs
+- divmod
+- pow
+- round
+- sum
+- min
+- max
 
-int
-float
-str
-list
-tuple
-dict
-set
-frozenset
-Mathematical functions:
+### String manipulation=
+- len
+- str.upper
+- str.lower
+- str.strip
+- str.replace
+- str.split
+- str.join
 
-abs
-divmod
-pow
-round
-sum
-min
-max
-String manipulation:
+### Input and Output
+- print
+- input
+- open
+- file.read
+- file.write
 
-len
-str.upper
-str.lower
-str.strip
-str.replace
-str.split
-str.join
-Input and Output:
+### File and Directory Management
+- os.getcwd
+- os.chdir
+- os.mkdir
+- os.rmdir
+- os.listdir
 
-print
-input
-open
-file.read
-file.write
-File and Directory Management:
-
-os.getcwd
-os.chdir
-os.mkdir
-os.rmdir
-os.listdir
-Exception Handling:
-
-try
-except
-finally
-raise
+### Exception Handling
+- try
+- except
+- finally
+- raise
