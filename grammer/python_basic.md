@@ -37,7 +37,7 @@ ex) x = 5
 `try` 와 `except` 를 이용해 에러발생이나 예외 시 동작을 설정할 수 있다.
 
 ## 잊기 쉬운 함수
-### Iteration
+### 반복
 - enumerate
 - zip
 - reversed
@@ -46,7 +46,7 @@ ex) x = 5
 - filter
 - reduce
 
-### Data type conversion
+### 자료형 변환
 - int
 - float
 - str
@@ -56,7 +56,7 @@ ex) x = 5
 - set
 - frozenset
 
-### Mathematical functions
+### 수학적 함수
 - abs
 - divmod
 - pow
@@ -65,7 +65,7 @@ ex) x = 5
 - min
 - max
 
-### String manipulation=
+### 문자 조작
 - len
 - str.upper
 - str.lower
@@ -74,21 +74,21 @@ ex) x = 5
 - str.split
 - str.join
 
-### Input and Output
+### 입출력
 - print
 - input
 - open
 - file.read
 - file.write
 
-### File and Directory Management
+### 파일과 폴더 관리
 - os.getcwd
 - os.chdir
 - os.mkdir
 - os.rmdir
 - os.listdir
 
-### Exception Handling
+### 예외 처리
 - try
 - except
 - finally
