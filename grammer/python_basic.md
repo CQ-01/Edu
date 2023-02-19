@@ -37,7 +37,7 @@ ex) x = 5
 `try` 와 `except` 를 이용해 에러발생이나 예외 시 동작을 설정할 수 있다.
 
 ## 잊기 쉬운 함수
-### 반복
+### Iteration
 - enumerate
 - zip
 - reversed
@@ -47,14 +47,14 @@ ex) x = 5
 - reduce
 
 ### 자료형 변환
-- int
-- float
-- str
-- list
-- tuple
-- dict
-- set
-- frozenset
+- int : 숫자형
+- float : 실수형
+- str : 문자형
+- list : 리스트
+- tuple : 튜플
+- dict : 딕셔너리
+- set : 집합(중복불가, 변경 가능)
+- frozenset : 집합(변경 불가)
 
 ### 수학적 함수
 - abs
@@ -62,31 +62,31 @@ ex) x = 5
 - pow
 - round
 - sum
-- min
-- max
+- min : 최솟값
+- max : 최댓값
 
 ### 문자 조작
-- len
-- str.upper
-- str.lower
+- len : 문자의 길이 출력
+- str.upper : 대문자로 변경
+- str.lower : 소문자로 변경
 - str.strip
 - str.replace
-- str.split
+- str.split : 분리
 - str.join
 
 ### 입출력
-- print
-- input
-- open
-- file.read
-- file.write
+- print : 출력
+- input : 값 입력
+- open : 파일 열기
+- file.read : 파일 읽기
+- file.write : 파일 쓰기
 
 ### 파일과 폴더 관리
 - os.getcwd
 - os.chdir
-- os.mkdir
-- os.rmdir
-- os.listdir
+- os.mkdir : 폴더 생성
+- os.rmdir : 폴더 삭제
+- os.listdir : 
 
 ### 예외 처리
 - try
