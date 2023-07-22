@@ -44,17 +44,49 @@ You can organize your Python code into reusable modules using the `import` state
 ## 예외처리
 Python provides a mechanism for handling errors and exceptions using the `try` and `except` statements.
 
-## 포매팅
+## 출력
+### 포매팅
 ```py
 print('덧셈 : %d + %d = %d' % (num1, num2, num1 + num2))
 # %d 자리에 포매팅, d(십진수), b(이진수), s(문자열)...
 
 print(f'덧셈: {num1} + {num2} = {num1 + num2}')
-# f스트링
+# f'string
 
 print(f'덧셈: {num1} + {num2:>3} = {num1 + num2}')
 # >n 자릿수
 ```
+```py
+print('%d' % 123)
+>> 123
+
+print('%5d' % 123)
+>>   123
+
+print('%05d' % 123)
+>> 00123
+
+print('%f' % 123.45)
+>> 123.450000
+
+print('%7.1f' % 123.45)
+>>   123.5
+
+print('%7.3f' % 123.45)
+>> 123.450
+
+print('%s' % 'Python')
+>> Python
+
+print('%10s' % 'Python')
+>>     Python
+```
+
+### escape 문자
+이스케이프문자|역할|설명
+|--|--|--|
+|\n|새줄로 이동|enter|
+|\t|||
 
 ## 관련 링크
 [파이썬 자습서](https://docs.python.org/ko/3.10/tutorial/datastructures.html#list-comprehensions)
