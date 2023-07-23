@@ -86,7 +86,14 @@ print('%10s' % 'Python')
 이스케이프문자|역할|설명
 |--|--|--|
 |\n|새줄로 이동|enter|
-|\t|||
+|\t|다음탭 이동|tab|
+|\b|뒤로 한칸 이동|backspace|
+|`\\`|\출력|
+|`\'`|'출력|
+|`\*`|*출력|
+
+### eval()
+- 문자열을 숫자처럼 계산
 
 ## 관련 링크
 [파이썬 자습서](https://docs.python.org/ko/3.10/tutorial/datastructures.html#list-comprehensions)
