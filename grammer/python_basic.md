@@ -94,6 +94,10 @@ print('%10s' % 'Python')
 
 ### eval()
 - 문자열을 숫자처럼 계산
+```py
+eval('3' + '4')
+>> 7
+```
 
 ## 관련 링크
 [파이썬 자습서](https://docs.python.org/ko/3.10/tutorial/datastructures.html#list-comprehensions)
