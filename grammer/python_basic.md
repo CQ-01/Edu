@@ -105,6 +105,15 @@ print('%10s' % 'Python')
 eval('3' + '4')
 >> 7
 ```
+### type이 tuple 인 이유?
+```py
+a = ''
+b = 1
+c = ['a', 'b', ['a', b], (a, 'c')]
+for b in c:
+  a = b
+print(type(a))
+```
 
 ## 관련 링크
 [파이썬 자습서](https://docs.python.org/ko/3.10/tutorial/datastructures.html#list-comprehensions)
