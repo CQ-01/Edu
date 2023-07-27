@@ -12,7 +12,7 @@ x = 5
 - 문자열(str)
   - `input()`으로 입력받으면 모두 문자열
 - 리스트
-  - list = []
+  - `list = [a, b, c, d ...]`
   - 리스트 컴프리헨션
 ```py
 # 1 부터 10,000까지 중 7의 갯수
@@ -21,9 +21,12 @@ str(list(range(1, 10001))).count('7')
 sum([str(x).count('7') for x in range(1, 10001)])
 ```
 - 딕셔너리
-  - dic = {a : 1, b : 2, c = 3}
+  - `dic = {a : 1, b : 2, c = 3}`
 - 튜플
-  - tuple = {}
+  - `tuple = (a, b, c, d ...)`
+  - 수정이 안되므로 처음 지정할때 값을 다 넣기
+  - `() + ()`로 list의 `.append`와 같은 결과
+    - 한 가지 요소만 더할 경우 ` + (a,)` 콤마 넣기
 - 불린
   - True / False
 
@@ -61,7 +64,7 @@ print(f'덧셈: {num1} + {num2} = {num1 + num2}')
 # f'string
 
 print(f'덧셈: {num1} + {num2:>3} = {num1 + num2}')
-# >n 자릿수
+# >n : n(자릿수), >(우측정렬), <(좌측정렬), ^(가운데정렬)
 ```
 ```py
 print('%d' % 123)
@@ -81,12 +84,6 @@ print('%7.1f' % 123.45)
 
 print('%7.3f' % 123.45)
 >> 123.450
-
-print('%s' % 'Python')
->> Python
-
-print('%10s' % 'Python')
->>     Python
 ```
 
 ### escape 문자
@@ -113,6 +110,23 @@ c = ['a', 'b', ['a', b], (a, 'c')]
 for b in c:
   a = b
 print(type(a))
+```
+### 인덱싱, 슬라이싱
+- 데이터에 순서가 있어야 한다
+```py
+print('%s' % 'Python')
+>> Python
+
+print('%10s' % 'Python')
+>>     Python
+# 10자리로 우측정렬한다
+# 문자 간 공백이 있을 경우 공백을 사이에 두고 양측으로 정렬됨
+```
+```py
+"I eat {0} apples".format(3)
+>> "I eat 3 apples"
+
+
 ```
 
 ## 관련 링크
