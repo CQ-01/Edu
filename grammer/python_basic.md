@@ -69,21 +69,27 @@ print(f'덧셈: {num1} + {num2:>3} = {num1 + num2}')
 ```py
 print('%d' % 123)
 >> 123
+# 십진수로 포맷
 
 print('%5d' % 123)
 >>   123
+# 십진수의 5자리로 포맷
 
 print('%05d' % 123)
 >> 00123
+# 십진수의 5자리 빈칸 0으로 포맷
 
 print('%f' % 123.45)
 >> 123.450000
+# 숫자 입력 없으면 소수 6째 자리까지 포맷
 
 print('%7.1f' % 123.45)
 >>   123.5
+# 7자리에 소수 첫째줄까지
 
 print('%7.3f' % 123.45)
 >> 123.450
+# 7자리에 소수 셋째줄까지
 ```
 
 ### escape 문자
@@ -126,7 +132,8 @@ print('%10s' % 'Python')
 "I eat {0} apples".format(3)
 >> "I eat 3 apples"
 
-
+"I ate {0} apples. So, I'm {1}".format(10, 'full')
+>> "I ate 10 apples. So, I'm full"
 ```
 
 ## 관련 링크
