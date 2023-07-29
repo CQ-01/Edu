@@ -135,6 +135,30 @@ print('%10s' % 'Python')
 "I ate {0} apples. So, I'm {1}".format(10, 'full')
 >> "I ate 10 apples. So, I'm full"
 ```
+- 문자개수 세기
+  - `count()`
+- 위치 알려주기
+  - `find()` : 없는 문자를 입력하면 -1 반환
+  - `index()` : 없는 문자를 입력하면 에러 반환
+
+- 문자열 관련 함수
+  - `join()`
+```py
+a = "!"
+a.join('파이썬')
+'파!이!썬'
+```
+
+  - `upper()`, `lower()` : 대문자로, 소문자로
+  - `strip()`, `lstrip()`, `rstrip()` : 전체 공백지우기, 왼쪽 오른쪽 공백 지우기
+  - `replace()` : 문자열 바꾸기
+  - `split()` : 문자열 나누기
+    - `split()` 괄호 안의 문자가 없을 경우 리스트를 통으로 반환
+
+### 단일문자와 정수간의 관계
+- 문자 데이터를 변환할 국제적인 기준 : ASCII, UNICODE
+- `chr()` : 정수 $\rightarrow$ 문자로 변환, `ord()` : 문자 $\rightarrow$ 정수로 변환
+
 
 ## 관련 링크
 [파이썬 자습서](https://docs.python.org/ko/3.10/tutorial/datastructures.html#list-comprehensions)
