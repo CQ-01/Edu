@@ -176,6 +176,15 @@ a.join('파이썬')
 - 문자 데이터를 변환할 국제적인 기준 : ASCII, UNICODE
 - `chr()` : 정수 $\rightarrow$ 문자로 변환, `ord()` : 문자 $\rightarrow$ 정수로 변환
 
+### 날짜
+```py
+import datetime
+now = datetime.datetime.now()
+# 현재 시각
+
+now.strftime('지금 시각은 %Y년 %m월 %d일 %H시 %M분 %S초 입니다.')
+# 시간 포맷하는 함수
+```
 
 ## 관련 링크
 [파이썬 자습서](https://docs.python.org/ko/3.10/tutorial/datastructures.html#list-comprehensions)
