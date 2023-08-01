@@ -185,6 +185,51 @@ now = datetime.datetime.now()
 now.strftime('지금 시각은 %Y년 %m월 %d일 %H시 %M분 %S초 입니다.')
 # 시간 포맷하는 함수
 ```
+## 외부 사이트에서 가져오기
+```py
+import urllib.request
+import ssl
+
+ctx = ssl._create_unverified_context()
+
+#환율정보 페이지 불러오기
+print("[환율정보 불러오기]")
+URL = "https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=%ED%99%98%EC%9C%A8"
+page = urllib.request.urlopen(URL, context=ctx)  
+text = page.read().decode("utf8")  # 해당 페이지의 소스코드
+# print(text)
+
+#환율정보 가져오기: 기준시간 
+searchText = 'class="grp_info"> <em>'
+# 해당 유니크 텍스트의 가장 앞 부분의 위치를 찾음
+where      = text.find(searchText)  #소스코드에서 해당 문자열의 시작위치
+targetInfo = text[where+len(searchText):where+len(searchText)+16]
+print(f'-환율기준시간: {targetInfo}')
+
+#환율정보 가져오기: 달러
+searchText = '<span>미국 <em>USD</em></span></a></th> <td><span>'
+where      = text.find(searchText)
+targetInfo = text[where+len(searchText):where+len(searchText)+8] 
+print(f'-달러당: {targetInfo}')
+
+#환율정보 가져오기: 유로
+searchText = '<span>유럽연합 <em>EUR</em></span></a></th> <td><span>'
+where      = text.find(searchText)
+targetInfo = text[where+len(searchText):where+len(searchText)+8]
+print(f'-유로: {targetInfo}')
+
+#환율정보 가져오기: 위안
+searchText = '<span>중국 <em>CNY</em></span></a></th> <td><span>'
+where      = text.find(searchText)
+targetInfo = text[where+len(searchText):where+len(searchText)+6] 
+print(f'-위안: {targetInfo}')
+
+#환율정보 가져오기: 엔화
+searchText = '<span><em>JPY 100</em>일본 </span></a></th> <td><span>'
+where      = text.find(searchText)
+targetInfo = text[where+len(searchText):where+len(searchText)+6] 
+print(f'-엔화: {targetInfo}')
+```
 
 ## 관련 링크
 [파이썬 자습서](https://docs.python.org/ko/3.10/tutorial/datastructures.html#list-comprehensions)
