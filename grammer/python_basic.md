@@ -31,19 +31,48 @@ sum([str(x).count('7') for x in range(1, 10001)])
   - True / False
 
 ## 연산자
-Python supports various mathematical and logical operators, such as:
-- 덧셈 (+)
-- 뺄셈 (-)
-- 곱셈 (*)
-- 나눗셈 (/)
-- 몫 (//)
-- 나머지 (%)
+> 프로그래밍 언어의 시작 : 빠른 연산을 위해
+### 산술연산자
+- `+` : 덧셈, `+=` : a = a + 1
+- `-` : 뺄셈, `-+` : a = a - 1
+- `*` : 곱셈, `*=` : a = a * 1
+- `**` : 거듭제곱, `**=` : a = a ** 1
+- `/` : 나눗셈, `/=` : a = a / 1
+- `//` : 몫, `//=` : a = a // 1
+- `%` : 나머지, `%=` : a = a % 1
 
-## 반복문
-Python provides several control flow statements to control the flow of execution in a program, including:
-- `if`
-- `else`
-- `for` loops
+### 관계연산자
+- `>` : 왼쪽이 크다
+- `<` : 오른쪽이 크다
+- `==` : 같다
+- `!=` : 같지 않다
+- `<=` : 오른쪽이 크거나 같다
+- `>=` : 왼쪽이 크거나 같다
+
+### 논리연산자
+> 결과값이 True / False
+- `and`(논리곱) : 둘다 참이어야 참
+- `or`(논리합) : 둘중 하나만 참이어도 참
+- `not`(논리부정) : 참이면 거짓, 거짓이면 참
+- 멤버쉽연산자
+  - `in`
+  - `not in`
+
+## 조건문, 반복문
+- if문
+```py
+if 조건문1:
+  실행문1
+# 조건문이 참이면 실행문1 실행
+
+elif 조건문2:
+  실행문2
+# 조건문1이 거짓이고, 조건문2가 참이면 실행문2 실행
+
+else:
+  실행문 3
+# 조건문1, 2가 모두 거짓이면 실행문3 실행
+```
 
 ## 함수
 In Python, you can define your own functions using the `def` keyword. Functions are blocks of reusable code that can be called with specific arguments.
