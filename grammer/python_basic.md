@@ -73,6 +73,51 @@ else:
   실행문 3
 # 조건문1, 2가 모두 거짓이면 실행문3 실행
 ```
+### 주민번호로 정보얻기
+```py
+num = input('주민번호를 입력하세요 :').split('-')
+if num[1][0] == '1' or num[1][0] == '3':
+    sex = '남성'
+elif num[1][0] == '2' or num[1][0] == '4':
+    sex = '여성'
+year = int(num[0][0:2])
+if num[1][0] == '1' or num[1][0] == '2':
+    year += 1900
+elif num[1][0] == '3' or num[1][0] == '4':
+    year += 2000
+print(f'{year}년 {num[0][2:4]}월 {num[0][4:6]}일, {2023 - year + 1}세, {sex}')
+```
+### 자동주문머신
+```py
+coffee1_price = 2500
+coffee2_price = 3000
+coffee3_price = 3000
+
+menu = f'''[커피 자동주문 머신 메뉴]
+-----------------------
+- 아메리카노 : {coffee1_price}원
+- 카페라떼 : {coffee2_price}원
+- 카푸치노 : {coffee3_price}원
+-----------------------
+원하시는 커피종류와 잔수를 입력하세요
+'''
+
+print(menu)
+coffee1 = int(input('아메리카노 몇잔: '))
+coffee2 = int(input('카페라떼   몇잔: '))
+coffee3 = int(input('카푸치노   몇잔: '))
+
+total = coffee1_price * coffee1 + coffee2_price * coffee2 + coffee3_price * coffee3
+print(f'주문하신 총 가격은 {total}원 입니다.')
+
+money = int(input('돈을 입력해주세요.'))
+if total > money:
+    print(f'돈이 {total - money}원 모자랍니다')
+elif total == money:
+    print('주문하신 음료 나왔습니다')
+else:
+    print(f'주문하신 음료와 함께 거스름돈 {money - total}원 돌려드리겠습니다')
+```
 
 ## 함수
 In Python, you can define your own functions using the `def` keyword. Functions are blocks of reusable code that can be called with specific arguments.
