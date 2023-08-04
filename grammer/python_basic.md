@@ -59,7 +59,7 @@ sum([str(x).count('7') for x in range(1, 10001)])
   - `not in`
 
 ## 조건문, 반복문
-- if문
+### if문
 ```py
 if 조건문1:
   실행문1
@@ -73,7 +73,7 @@ else:
   실행문 3
 # 조건문1, 2가 모두 거짓이면 실행문3 실행
 ```
-### 주민번호로 정보얻기
+- 주민번호로 정보얻기
 ```py
 num = input('주민번호를 입력하세요 :').split('-')
 if num[1][0] == '1' or num[1][0] == '3':
@@ -87,36 +87,95 @@ elif num[1][0] == '3' or num[1][0] == '4':
     year += 2000
 print(f'{year}년 {num[0][2:4]}월 {num[0][4:6]}일, {2023 - year + 1}세, {sex}')
 ```
-### 자동주문머신
+- 자동주문머신
 ```py
-coffee1_price = 2500
-coffee2_price = 3000
-coffee3_price = 3000
+burger_single_price = [4300, 4900, 5400]
+burger_set_price = [6700, 7200, 7700]
 
-menu = f'''[커피 자동주문 머신 메뉴]
+menu = f'''[맘스터치 키오스크]
 -----------------------
-- 아메리카노 : {coffee1_price}원
-- 카페라떼 : {coffee2_price}원
-- 카푸치노 : {coffee3_price}원
+- 싸이버거 : 단품 {burger_single_price[0]}원, 세트 {burger_set_price[0]}원
+- 화이트갈릭버거 : 단품 {burger_single_price[1]}원, 세트 {burger_set_price[1]}원
+- 인크레더블버거 : 단품 {burger_single_price[2]}원, 세트 {burger_set_price[2]}원
 -----------------------
-원하시는 커피종류와 잔수를 입력하세요
+원하시는 버거갯수를 입력하세요
 '''
-
 print(menu)
-coffee1 = int(input('아메리카노 몇잔: '))
-coffee2 = int(input('카페라떼   몇잔: '))
-coffee3 = int(input('카푸치노   몇잔: '))
+burger1_isset = 0
+burger2_isset = 0
+burger3_isset = 0
 
-total = coffee1_price * coffee1 + coffee2_price * coffee2 + coffee3_price * coffee3
-print(f'주문하신 총 가격은 {total}원 입니다.')
+burger1 = int(input('싸이버거를 몇개 주문하시나요? :'))
+if burger1 >= 1:
+    burger1_isset = int(input('그중에 세트는 몇개 주문하시나요?'))
+    if burger1_isset <= burger1:
+        pass
+    else:
+        print('다시 입력해 주세요')
 
-money = int(input('돈을 입력해주세요.'))
-if total > money:
-    print(f'돈이 {total - money}원 모자랍니다')
-elif total == money:
-    print('주문하신 음료 나왔습니다')
+burger2 = int(input('화이트갈릭버거를 몇개 주문하시나요? :'))
+if burger2 >= 1:
+    burger2_isset = int(input('그중에 세트는 몇개 주문하시나요?'))
+    if burger2_isset <= burger2:
+        pass
+    else:
+        print('다시 입력해 주세요')
+
+burger3 = int(input('인크레더블버거를 몇개 주문하시나요? :'))
+if burger3 >= 1:
+    burger3_isset = int(input('그중에 세트는 몇개 주문하시나요?'))
+    if burger3_isset <= burger3:
+        pass
+    else:
+        print('다시 입력해 주세요')
+
+total = (burger1 - burger1_isset) * burger_single_price[0] + burger1_isset * burger_set_price[0] + (burger2 - burger2_isset) * burger_single_price[1] + burger2_isset * burger_set_price[1] + (burger3 - burger3_isset) * burger_single_price[2] + burger3_isset * burger_set_price[2]
+
+print(f'현재까지 주문 총액은 {total}원 입니다.')
+
+side1_price = 1800
+side2_price = 2000
+
+side_menu = f'''[사이드메뉴]
+-----------------------
+- 코울슬로 : {side1_price}원
+- 콘샐러드 : {side2_price}원
+-----------------------
+원하시는 사이드메뉴 갯수를 입력하세요
+'''
+print(side_menu)
+side1 = int(input('코울슬로를 몇개 주문하시나요? :'))
+side2 = int(input('콘샐러드를 몇개 주문하시나요? :'))
+
+side_total = side1 * side1_price + side2 * side2_price
+print(f'현재까지 주문 총액은 {total + side_total}원 입니다.')
+bill = int(input('돈을 넣어 주세요'))
+
+if bill > total + side_total:
+    print(f'주문해주셔서 감사합니다. 거스름돈 {bill - total + side_total}원 돌려드리겠습니다.')
+
+elif bill == total + side_total:
+    print('주문해주셔서 감사합니다.')
 else:
-    print(f'주문하신 음료와 함께 거스름돈 {money - total}원 돌려드리겠습니다')
+    print(f'돈이 {total + side_total - bill}원 부족합니다.')
+```
+### for문
+- 기본 형식
+```py
+for num in range(1, 10, 2):
+  print(f'{num} 안녕하세요')
+>> 1 안녕하세요
+   3 안녕하세요
+   5 안녕하세요
+   ...
+   9 안녕하세요
+# range(1, 10, 2) / 1: 해당숫자 부터 시작 / 10: 해당숫자-1 까지 반복 / 2: 간격
+
+total = 0
+for i in range(1, 10001):
+  total += i
+
+sum(list(range(1, 10001)))
 ```
 
 ## 함수
