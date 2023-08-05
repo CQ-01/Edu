@@ -5,14 +5,17 @@
 x = 5
 ```
 
-## 데이터타입
+## 데이터타입, 집합
 - 숫자
   - int : 정수
   - float : 실수
 - 문자열(str)
   - `input()`으로 입력받으면 모두 문자열
-- 리스트
-  - `list = [a, b, c, d ...]`
+### 리스트
+>`list = [a, b, c, d ...]`
+  - `sum()` : 리스트 내 요소들의 합
+  - `min()` : 리스트 내 요소중 가장 작은 값
+  - `max()` : 리스트 내 요소중 가장 큰 값
   - 리스트 컴프리헨션
 ```py
 # 1 부터 10,000까지 중 7의 갯수
@@ -170,14 +173,32 @@ for num in range(1, 10, 2):
    ...
    9 안녕하세요
 # range(1, 10, 2) / 1: 해당숫자 부터 시작 / 10: 해당숫자-1 까지 반복 / 2: 간격
-
+```
+- 1부터 n까지 더하기
+```py
+# for문 사용
 total = 0
 for i in range(1, 10001):
   total += i
 
+# sum() 사용
 sum(list(range(1, 10001)))
 ```
 
+- 괄호 짝 맞추기
+```py
+a_list = list(input('괄호 :'))
+a = 0
+for _ in a_list:
+    if _ == '(':
+        a += 1
+    elif _ == ')':
+        a -= 1
+if a_list[0] == '(' and a_list[-1] == ')' and a == 0:
+    print('결과 : True')
+else:
+    print('결과 : False')
+```
 ## 함수
 In Python, you can define your own functions using the `def` keyword. Functions are blocks of reusable code that can be called with specific arguments.
 
