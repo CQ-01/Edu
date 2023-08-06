@@ -199,6 +199,13 @@ if a_list[0] == '(' and a_list[-1] == ')' and a == 0:
 else:
     print('결과 : False')
 ```
+- 구구단
+```py
+n = int(input(f'몇단을 출력할까요? :'))
+print('-' * 30)
+for _ in range(1, 10):
+    print(f'{n} X {_} = {n*_:>2}') 
+```
 ## 함수
 In Python, you can define your own functions using the `def` keyword. Functions are blocks of reusable code that can be called with specific arguments.
 
