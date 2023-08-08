@@ -16,6 +16,7 @@ x = 5
   - `sum()` : 리스트 내 요소들의 합
   - `min()` : 리스트 내 요소중 가장 작은 값
   - `max()` : 리스트 내 요소중 가장 큰 값
+  - `sorted()` : 리스트 내 요소의 정렬
   - 리스트 컴프리헨션
 ```py
 # 1 부터 10,000까지 중 7의 갯수
@@ -206,14 +207,83 @@ print('-' * 30)
 for _ in range(1, 10):
     print(f'{n} X {_} = {n*_:>2}') 
 ```
+
+### while문
+> for와 다르게 무한 반복, 탈출 조건을 할당해야 함
+- 기본구분
+```py
+while True:
+  실행문1
+  if 조건문1:
+    break
+```
+
 ## 함수
 In Python, you can define your own functions using the `def` keyword. Functions are blocks of reusable code that can be called with specific arguments.
 
 ## 모듈
-You can organize your Python code into reusable modules using the `import` statement.
+> import 모듈명 as 약자
 
+### urllib
+> import urllib,
+> import ssl
+
+### random
+> import random
+- 주사위 게임 승자 구하기
+```py
+import random
+part = ['A', 'B', 'C', 'D']
+n = []
+for _ in range(4):
+    n.append(random.randint(1, 6))
+print(n)
+if n.count(max(n)) >= 2:
+    print('승부가 나지 않았습니다')
+else:
+    print(f'{part[n.index(max(n))]}님이 승리했습니다')
+```
+- 랜덤 가위바위보
+```py
+import random
+rsp = ['가위', '바위', '보']
+player = ['쫑댕', '소방']
+player1_win = 0
+player2_win = 0
+draw = 0
+print(f'{player[0]} vs {player[1]} 랜덤 {rsp[0]} {rsp[1]} {rsp[2]} 게임!')
+print('-' * 30)
+n = int(input('몇 번 게임할 건가요?: '))
+print()
+for _ in range(n):
+    print(f'<<{_ + 1} 번째 게임!!>>')
+    player_1 = random.choice(rsp)
+    player_2 = random.choice(rsp)
+    print(f'결과 => {player[0]}: [{player_1}], {player[1]}: [{player_2}]')
+    if player_1 == player_2:
+        print('비겼습니다.')
+        draw += 1
+    elif (player_1 == '가위' and player_2 == '보') or (player_1 == '바위' and player_2 == '가위') or (player_1 == '보' and player_2 == '바위'):
+        print(f' {player[0]}이가 이겼습니다!!!')
+        player1_win += 1
+    else:
+        print(f'{player[1]}이가 이겼습니다!!!')
+        player2_win += 1
+
+    print()
+print('-' * 30)
+print(f'최종 결과 : {player[0]} {player1_win}승!, {player[1]} {player2_win}승!')
+```
 ## 예외처리
-Python provides a mechanism for handling errors and exceptions using the `try` and `except` statements.
+- 기본 구문
+```py
+try:
+  실행문1
+except 에러명1:
+  실행문2
+# 실행문1을 실행하다 에러1이 나면 에러를 출력하지 않고 실행문2를 실행한다
+```
+
 
 ## 출력
 ### 포매팅
