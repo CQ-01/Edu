@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+{% block html_body %}
+    <div class='container'>
+        <h1>글 상세 보기</h1>
+
+        {% bootstrap_form board_detail_form %}
+
+        <br>
+        <button class='btn btn-secondary' 
+            onclick="location.href='{% url 'bbs:b_list'%}'" >리스트로 돌아아기</button>
+        <button class='btn btn-info' 
+            onclick="location.href='{% url 'bbs:b_update' board_detail_form.initial.id %}'">수정</button>
+        <button class='btn btn-danger' 
+            onclick="location.href='{% url 'bbs:b_delete' board_detail_form.initial.id %}'">삭제</button>
+        <button class='btn btn-warning'
+            onclick="location.href='{% url 'bbs:b_like' board_detail_form.initial.id %}'">좋아요</button>
+    </div>
+    
+{% endblock %}

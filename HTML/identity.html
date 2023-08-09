@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <caption>인적사항</caption>
+        <tr>
+            <td>이름</td>
+            <td><input type="text" name="uid"></td>
+        </tr>
+        <tr>
+            <td>영어이름</td>
+            <td><input type="password" name="upw" maxlength="10"></td>
+        </tr>
+
+        <tr>
+            <td>성별</td>
+            <td>
+                <input type="radio" name="gender" value="man" checked>남자
+                <input type="radio" name="gender" value="women">여자
+            </td>
+        </tr>
+
+        <tr>
+            <td>학력사항</td>
+            <td>
+                <input type="checkbox" name="subject" value="java">고졸이하
+                <input type="checkbox" name="subject" value="jsp">초대졸
+                <input type="checkbox" name="subject" value="iphone" checked>대졸
+                <input type="checkbox" name="subject" value="iphone">석사이상
+            </td>
+        </tr>
+
+        <tr>
+            <td>사진첨부</td>
+            <td>
+                <input type="file" name="file">
+            </td>
+        </tr>
+
+        <tr>
+            <td>대표색상</td>
+            <td>
+                <input type="color" name="color">
+            </td>
+        </tr>
+
+        <tr>
+            <td>생년월일</td>
+            <td>
+                <input type="date" name="xyz">
+            </td>
+        </tr>
+
+    <tr>
+        <td>보내기</td>
+        <td>
+            <input type="button" class="btn btn-primary" value="push">
+            <input type="submit" value="send">
+            <input type="reset" value="cancel">
+
+        </td>
+    </tr>
+</table>
+
+
+</body>
+
+</html>
