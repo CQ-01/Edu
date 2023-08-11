@@ -8,29 +8,29 @@
 ### argument(인자)
 - 명령어에 전달되는 값
 - 파일명이나 디렉토리명, 명령어 실행에 필요한 정보 등
-```bash
-$ date
-2023. 04. 11. (화) 17:36:15 KST
+  ```bash
+  $ date
+  1.    04. 11. (화) 17:36:15 KST
 
-$ echo Hello world
-Hello world
+  $ echo Hello world
+  Hello world
 
-$ ls -F
-Desktop/ Downloads/ lab/ Pictures/ Templates/ Videos/ Documents/ ...
-```
+  $ ls -F
+  Desktop/ Downloads/ lab/ Pictures/ Templates/ Videos/ Documents/ ...
+  ```
 - 옵션의 경우 여러가지 기능을 함께 적용 가능
-```bash
-$ ls -F
-test.sh*
+  ```bash
+  $ ls -F
+  test.sh*
 
-$ ls -a
-.  .bash_history .bash_profile  .cache  .lesshst  .viminfo
-.. .bash_logout  .bashrc        .config .mozilla  .test.sh
+  $ ls -a
+  .  .bash_history .bash_profile  .cache  .lesshst  .viminfo
+  .. .bash_logout  .bashrc        .config .mozilla  .test.sh
 
-$ ls -aF
-./  .bash_history  .bash_profile  .cache/  .lesshst  .viminfo
-../ .bash_logout   .bashrc        .config  .mozilla/  test.sh*
-```
+  $ ls -aF
+  ./  .bash_history  .bash_profile  .cache/  .lesshst  .viminfo
+  ../ .bash_logout   .bashrc        .config  .mozilla/  test.sh*
+  ```
 ## 2. 사용자 정보 확인_id
 ### 사용자의 UID와 GID 확인
 - 현재 시스템에 로그인한 사용자 또는 인자로 지정한 사용자의 정보 확인
@@ -38,35 +38,35 @@ $ ls -aF
 - 옵션
   - g : 기본 그룹의 GID만 출력
   - G : 기본 그룹과 추가 그룹의 GID들을 출력
-```bash
-$ id
-uid = 1000(linux) gid=1000(linux) groups=1000(linux),4(adam),24(cdrom),27(sudo),30(dip),46(plugdev),113(lpadmin)
-```
+    ```bash
+    $ id
+    uid = 1000(linux) gid=1000(linux) groups=1000(linux),4(adam),24(cdrom),27(sudo),30(dip),46(plugdev),113(lpadmin)
+    ```
 ## 3. 로그인 세션_who
 ### 현재 로그인 한 모든 사용자 정보 출력(who)
 - 현재 접속되어 있는 사용자계정의 이름, 접속회선, 접속시간, 접속위치등 확인
 - 옵션
   - q : 로그인한 계정의 이름과 수를 출력
   - H : 출력 정보의 헤더를 표시
-```bash
-$ who
-linux  tty7  2023-04-11 18:06 (:0)
-linux  pts/3 2023-04-11 18:06 (192. 168. 1. 88)
-```
+    ```bash
+    $ who
+    linux  tty7  2023-04-11 18:06 (:0)
+    linux  pts/3 2023-04-11 18:06 (192. 168. 1. 88)
+    ```
 
 ## 4. 사용자 암호 변경하기_passwd
 ### 사용자 패스워드 지정(pw)
 - 생성된 계정은 패스워드 설정이 필요함
 - 사용법
   - passwd [옵션] [사용자ID]
-```bash
-$ passwd
-Changing password for linux.
-(current) UNIX password:
-Enter new UNIX password:
-Retype new UNIX password:
-passwd: password updated successfully
-```
+    ```bash
+    $ passwd
+    Changing password for linux.
+    (current) UNIX password:
+    Enter new UNIX password:
+    Retype new UNIX password:
+    passwd: password updated successfully
+    ```
 
 ## 5. 시스템 정보 수집하기
 ### 현재 로그인 된 사용자 정보
@@ -94,18 +94,18 @@ $ ip address           ($ ifconfig)
 ### 사용자 전환(Switch User: su)
 - 다른 계정 전환을 위해 로그아웃 $\rightarrow$ 로그인 과정이 필요
 - 일시적 다른 계정 전환 시 su 명령어 사용
-```bash
-$ su - root
-Password:
-# id
-uid=0(root) gid=0(root) groups=0(root)
-```
+  ```bash
+  $ su - root
+  Password:
+  # id
+  uid=0(root) gid=0(root) groups=0(root)
+  ```
 ### 다른 사용자의 권한을 명령어 실행(Switch User DO: sudo)
 - 명령어를 다른 사용자 권한으로 실행
-```bash
-$ sudo useradd hpedu
-[sudo] password for linux:
-```
+  ```bash
+  $ sudo useradd hpedu
+  [sudo] password for linux:
+  ```
 # II. 파일 시스템 관리
 ## 1. 디렉토리 관리
 ### 디렉토리
@@ -132,13 +132,13 @@ $ sudo useradd hpedu
 
 ### 디렉토리 확인(pwd: print working directory)
 - 자신이 현재 어느 디렉토리에 위치해 있는지 확인(현재 작업 디렉토리 확인)
-```bash
-$ pwd
-/home/centos
+  ```bash
+  $ pwd
+  /home/centos
 
-$ pwd
-/etc/sysconfig
-```
+  $ pwd
+  /etc/sysconfig
+  ```
 ### 경로(path)
 - 사용자가 원하는 디렉토리나 파일의 트리 형태 논리적인 자료구조 안에서의 위치
 - 특정 파일이나 디렉토리를 사용자나 어플리케이션이 식별하기 위한 정보
@@ -164,45 +164,44 @@ $ pwd
 - 옵션
   - p : 하나의 디렉토리와 그 하위 디렉토리를 동시에 생성
   - m : 디렉토리를 생성할 때 접근 권한을 지정
-```bash
-$ ls
-$ mkdir class
-$ ls -l
-합계 0
-drwxrwxr-x. 2 centos centos 6 7월 22 12:22 class
+  ```bash
+  $ ls
+  $ mkdir class
+  $ ls -l
+  합계 0
+  drwxrwxr-x. 2 centos centos 6 7월 22 12:22 class
 
-$ mkdir class/linux
-$ mkdir class/linux/fundamentals
-```
+  $ mkdir class/linux
+  $ mkdir class/linux/fundamentals
+  ```
 
 ### 디렉토리 삭제
 - 명령어로 삭제할 경우 복원불가
 - 삭제하고자 하는 디렉토리는 반드시 비어있어야 함
 - 현재 위치하고 있는 디렉토리는 삭제 불가
-```bash
-$ rm remove_file
-$ rmdir class
-rmdir : failed to remove 'class' : 디렉토리가 비어있지 않음
-$ rm -r : 서브디렉토리나 파일을 포함하는 디렉토리 삭제
+  ```bash
+  $ rm remove_file
+  $ rmdir class
+  rmdir : failed to remove 'class' : 디렉토리가 비어있지 않음
+  $ rm -r : 서브디렉토리나 파일을 포함하는 디렉토리 삭제
 
-$ ls -R class
-class:
-linux
+  $ ls -R class
+  class:
+  linux
 
-class/linux:
-fundamentals
+  class/linux:
+  fundamentals
 
-class/linux/fundamentals:
-$ rmdir class/linux/fundamentals/ class/linux class
-```
+  class/linux/fundamentals:
+  $ rmdir class/linux/fundamentals/ class/linux class
+  ```
 
 ## 2. 파일관리
 ### 리눅스 파일의 특징
 - 일반적으로 확장자를 갖지 않음
 - 대소문자를 구분
 - 엄격한 소유/허가 권한을 가짐
-
-![리눅스파일](/img/img01.png)
+  ![리눅스파일](/img/img01.png)
 
 ### 파일내용 출력(cat)
 - 텍스트 파일의 내용을 표준 출력 장치로 출력
@@ -240,19 +239,19 @@ $ rmdir class/linux/fundamentals/ class/linux class
 - 파일의 날짜 시간 정보를 변경하는 명령어
 - 아무 옵션 없이 사용되면 서버의 현재 시간으로 변경
 - 존재하지 않는 파일명을 인수로 주면 사이즈가 0인 빈 파일을 생성
-```bash
-$ ||
--rwxrwxr-x. 1 centos centos 33 12월 3 16:14 test.sh
+  ```bash
+  $ ||
+  -rwxrwxr-x. 1 centos centos 33 12월 3 16:14 test.sh
 
-$ touch -t 12131500 test.sh
-$ || test.sh
--rwxrwxr-x. 1 centos centos 33 12월 13 15:00 test.sh
+  $ touch -t 12131500 test.sh
+  $ || test.sh
+  -rwxrwxr-x. 1 centos centos 33 12월 13 15:00 test.sh
 
-$ touch emptyfile
-$ ||
--rw-rw-r--. 1 centos centos 0 12월 18 21:37 emptyfile
--rwxrwxr-x. 1 centos centos 33 12월 13 15:00 test.sh
-```
+  $ touch emptyfile
+  $ ||
+  -rw-rw-r--. 1 centos centos 0 12월 18 21:37 emptyfile
+  -rwxrwxr-x. 1 centos centos 33 12월 13 15:00 test.sh
+  ```
 
 ### 파일의 복사(cp)
 - 파일이나 디렉토리를 복사
@@ -261,25 +260,25 @@ $ ||
   - a : 파일의 모든 속성을 함께 복사
   - i : 복사하고자 하는 파일이 존재할 경우 사용자에게 복사 여부를 확인
   - r : 디렉토리 하위의 내용을 모두 복사
-```bash
-$ cp /etc/passwd /tmp/passwd.old
-$ ls -l /tmp/passwd.old
--rw-r--r--. 1 root root 2192  7월 22 12:37 /tmp/passwd.old
+    ```bash
+    $ cp /etc/passwd /tmp/passwd.old
+    $ ls -l /tmp/passwd.old
+    -rw-r--r--. 1 root root 2192  7월 22 12:37 /tmp/passwd.old
 
-$ mkdir backup
-$ cp /etc/passwd /etc/group backup
-$ ls backup
-group passwd
+    $ mkdir backup
+    $ cp /etc/passwd /etc/group backup
+    $ ls backup
+    group passwd
 
-$ cp backup backup-1
-cp: omitting directory 'backup'
+    $ cp backup backup-1
+    cp: omitting directory 'backup'
 
-$ cp -r backup backup-1
+    $ cp -r backup backup-1
 
-$ || -d backup*
-drwxr-xr-x. 2 root root 33 7월 22 12:38 backup
-drwxr-xr.x. 2 root root 33 7월 22 12:38 backup-1
-```
+    $ || -d backup*
+    drwxr-xr-x. 2 root root 33 7월 22 12:38 backup
+    drwxr-xr.x. 2 root root 33 7월 22 12:38 backup-1
+    ```
 
 ### 파일의 이동 및 이름 변경(mv)
 - 파일이나 디렉토리의 위치를 이동하거나 현재 이름을 다른 이름으로 변경
