@@ -11,12 +11,15 @@
   ```bash
   $ date
   1.    04. 11. (화) 17:36:15 KST
+  # 현재 시각
 
   $ echo Hello world
   Hello world
+  # print()와 같음
 
   $ ls -F
   Desktop/ Downloads/ lab/ Pictures/ Templates/ Videos/ Documents/ ...
+  # 
   ```
 - 옵션의 경우 여러가지 기능을 함께 적용 가능
   ```bash
@@ -106,6 +109,7 @@ $ ip address           ($ ifconfig)
   $ sudo useradd hpedu
   [sudo] password for linux:
   ```
+  - sudo : 수퍼유저 권한
 # II. 파일 시스템 관리
 ## 1. 디렉토리 관리
 ### 디렉토리
@@ -204,6 +208,9 @@ $ ip address           ($ ifconfig)
   ![리눅스파일](/img/img01.png)
 
 ### 파일내용 출력(cat)
+  ```bash
+  $ cat /etc/*-release
+  ```
 - 텍스트 파일의 내용을 표준 출력 장치로 출력
 - 파일 전체를 한꺼번에 출력, 긴 파일 출력 시 전체 내용 확인 어려움
 - 사용법 : cat [옵션] 텍스트 파일명
@@ -288,18 +295,18 @@ $ ip address           ($ ifconfig)
   - f  : 이동하고자 하는 파일이 존재할 경우 기존 파일을 삭제하고 이동
   - i : 이동하고자 하는 파일이 존재할 경우 사용자에게 이동 여부를 확인
   - v : 파일의 이동 과정을 출력
-```bash
-$ cp /etc/passwd.
-$ ls
-anaconda-ks.cfg backup-1  passwd backup  initial-setup-ks.cfg shell
+    ```bash
+    $ cp /etc/passwd.
+    $ ls
+    anaconda-ks.cfg backup-1  passwd backup  initial-setup-ks.cfg shell
 
-$ mv passwd passwd.old
-$ ls
-anaconda-ks.cfg backup-1  passwd.old backup  initial-setup-ks.cfg shell
-$ mv passwd.old backup
-$ ls backup
-group passwd passwd.old
-```
+    $ mv passwd passwd.old
+    $ ls
+    anaconda-ks.cfg backup-1  passwd.old backup  initial-setup-ks.cfg shell
+    $ mv passwd.old backup
+    $ ls backup
+    group passwd passwd.old
+    ```
 
 ### 파일의 삭제
 - 파일이나 디렉토리를 삭제
@@ -310,34 +317,33 @@ group passwd passwd.old
   - i : 파일을 삭제하기 전 사용자에게 삭제 여부를 확인
   - r : 디렉토리인 경우 디렉토리 하위의 모든 내용을 제거
   - v : 파일이 삭제되는 과정을 출력
-```bash
-$ rm passwd group
-rm: remove 일반 파일 'passwd'? y
-rm: remove 일반 파일 'group'? y
+    ```bash
+    $ rm passwd group
+    rm: remove 일반 파일 'passwd'? y
+    rm: remove 일반 파일 'group'? y
 
-$ rm -rf backup-1
-$ ls
-anaconda-ks.cfg  initial-setup-ks.cfg  backup  shell
-```
+    $ rm -rf backup-1
+    $ ls
+    anaconda-ks.cfg  initial-setup-ks.cfg  backup  shell
+    ```
 
 ### DF(disk free)
 - 파일 시스템 단위로 사이즈와 사용량 정보를 확인
 - 옵션
   - T : 파일 시스템의 종류를 함께 출력
   - h : 용량을 GB단위나 MB단위로 출력
-```bash
-$ df -hT
-Filesystem                  Type    Size    Used    Avail   Use%    Mounted on
-udev                        devtmpfs 971M   0       971M    0%      /dev
-tmpfs                       tmpfs   200M    3.9M    196M    2%      /run
-/dev/mapper/ubuntu--vg-root ext4    25G     4.7G    20G     20%     /
-tmpfs                       tmpfs   997M    252K    997M    1%      /dev/shm
-tmpfs                       tmpfs   5.0M    4.0K    5.0M    1%      /run/lock
-tmpfs                       tmpfs   997M    0       997M    0%      /sys/fs/cgroup
-/dev/sda1                   ext2    472M    124M    324M    28%     /boot
-tmpfs                       tmpfs   200M    80K     200M    1%      /run/user/1000'
-
-```
+    ```bash
+    $ df -hT
+    Filesystem                  Type    Size    Used    Avail   Use%    Mounted on
+    udev                        devtmpfs 971M   0       971M    0%      /dev
+    tmpfs                       tmpfs   200M    3.9M    196M    2%      /run
+    /dev/mapper/ubuntu--vg-root ext4    25G     4.7G    20G     20%     /
+    tmpfs                       tmpfs   997M    252K    997M    1%      /dev/shm
+    tmpfs                       tmpfs   5.0M    4.0K    5.0M    1%      /run/lock
+    tmpfs                       tmpfs   997M    0       997M    0%      /sys/fs/cgroup
+    /dev/sda1                   ext2    472M    124M    324M    28%     /boot
+    tmpfs                       tmpfs   200M    80K     200M    1%      /run/user/1000'
+    ```
 ### 소유권
 - 특정 파일이나 디렉토리가 누구의 소유인가를 나타냄
 
@@ -351,20 +357,20 @@ tmpfs                       tmpfs   200M    80K     200M    1%      /run/user/10
 - 사용법 : chown [옵션] 소유자명 파일/디렉토리 이름
 - 옵션
   - R : 디렉토리에 사용되며, 지정한 디렉토리와 하위의 모든 디렉토리, 파일의 소유자를 동시에 변경
-```bash
-$ || testfile
--rw-r--r--. 1 root root 2192  7월 22 12:45 testfile
-$ chown centos testfile
-$ || testfile
--rw-r--r--. 1 centos root 2192  7월 22 12:45 testfile
+    ```bash
+    $ || testfile
+    -rw-r--r--. 1 root root 2192  7월 22 12:45 testfile
+    $ chown centos testfile
+    $ || testfile
+    -rw-r--r--. 1 centos root 2192  7월 22 12:45 testfile
 
-$ chown -R centos backup
-$ || backup
-합계 12
--rw-r--r--. 1 centos root 950  7월 22 12:38 group
--rw-r--r--. 1 centos root 2192 7월 22 12:38 passwd
--rw-r--r--. 1 centos root 2192 7월 22 12:39 passwd.old
-```
+    $ chown -R centos backup
+    $ || backup
+    합계 12
+    -rw-r--r--. 1 centos root 950  7월 22 12:38 group
+    -rw-r--r--. 1 centos root 2192 7월 22 12:38 passwd
+    -rw-r--r--. 1 centos root 2192 7월 22 12:39 passwd.old
+    ```
 
 ### 파일 그룹 변경(chgrp)
 - 파일이나 디렉토리의 소유 그룹 정보를 변경
@@ -372,30 +378,30 @@ $ || backup
 - 사용법 : chgrp [옵션] 그룹명 파일/디렉토리 이름
 - 옵션
   - R : 디렉토리에 사용되며, 지정한 디렉토리와 그 하위 모든 dir 파일의 그룹을 동시 변경
-```bash
-$ || testfile
--rw-r--r--. 1 centos root 2192  7월 22 12:45 testfile
+    ```bash
+    $ || testfile
+    -rw-r--r--. 1 centos root 2192  7월 22 12:45 testfile
 
-$ chgrp centos testfile
-$ || testfile
--rw-r--r--. 1 centos centos 2192  7월 22 12:45 testfile
+    $ chgrp centos testfile
+    $ || testfile
+    -rw-r--r--. 1 centos centos 2192  7월 22 12:45 testfile
 
-$ chown root:root testfile
-$ || testfile
--rw-r--r--. 1 root root 2192  7월 22 12:45 testfile
-```
+    $ chown root:root testfile
+    $ || testfile
+    -rw-r--r--. 1 root root 2192  7월 22 12:45 testfile
+    ```
 
 ### 파일의 허가권의 개요
 - 권한의 종류 및 내용
 
-|허가권|대상|내용|
-|--|--|--|
-|읽기|파일|파일을 읽을 수 있는 권한|
-|읽기|디렉토리|디렉토리에 존재하는 파일 목록을 읽을 수 있는 권한|
-|쓰기|파일|파일을 수정할 수 있는 권한|
-|쓰기|디렉토리|디렉토리를 수정할 수 있는 권한|
-|실행|파일|파일을 명령어처럼 실행 할 수 있는 권한|
-|실행|디렉토리|디렉토리로 들어갈 수 있는 권한|
+  |허가권|대상|내용|
+  |--|--|--|
+  |읽기|파일|파일을 읽을 수 있는 권한|
+  |읽기|디렉토리|디렉토리에 존재하는 파일 목록을 읽을 수 있는 권한|
+  |쓰기|파일|파일을 수정할 수 있는 권한|
+  |쓰기|디렉토리|디렉토리를 수정할 수 있는 권한|
+  |실행|파일|파일을 명령어처럼 실행 할 수 있는 권한|
+  |실행|디렉토리|디렉토리로 들어갈 수 있는 권한|
 
 ### 파일 허가권 변경(chmod)
 - 기호 모드를 이용한 지정법
@@ -408,24 +414,24 @@ $ || testfile
   - r : 읽기 권한(read)
   - w : 쓰기 권한(write)
   - x : 실행 권한(execute)
-```bash
-$ || a.out
--rwxrwxr-x. 1 centos centos 63024  7월 22 12:27 a.out
+    ```bash
+    $ || a.out
+    -rwxrwxr-x. 1 centos centos 63024  7월 22 12:27 a.out
 
-$ chmod g-w,o-x a.out
+    $ chmod g-w,o-x a.out
 
-$ || a.out
--rwxr-xr--. 1 centos centos 63024  7월 22 12:27 a.out
-```
-- 8진수 허가모드를 이용한 지정 방법
-![허가모드](/img/img02.png)
-```bash
-$ || a.out
--rwxr-xr--. 1 centos centos 63024  7월 22 12:27 a.out
-$ chmod 644 a.out
-$ || a.out
--rw-r--r--. 1 centos centos 60324  7월 22 12:27 a.out
-```
+    $ || a.out
+    -rwxr-xr--. 1 centos centos 63024  7월 22 12:27 a.out
+    ```
+  - 8진수 허가모드를 이용한 지정 방법
+    ![허가모드](/img/img02.png)
+    ```bash
+    $ || a.out
+    -rwxr-xr--. 1 centos centos 63024  7월 22 12:27 a.out
+    $ chmod 644 a.out
+    $ || a.out
+    -rw-r--r--. 1 centos centos 60324  7월 22 12:27 a.out
+    ```
 
 ### 문자열 검색(grep)
 - 특정 파일이나 명령어 수행 결과로부터 검색된 해당 문자열이 포함된 라인만 화면 출력
@@ -435,18 +441,18 @@ $ || a.out
   - C : 검색 문자열을 포함한 라인의 수를 출력
   - i : 검색 문자열의 대소문자를 식별하지 않음
   - n : 검색 결과에 라인 번호를 붙여 출력
-```bash
-$ grep -i ROOT /etc/passwd
-root:x:0:0:root:/root:/bin/bash
-operator:x:11:0:operator:/root:/sbin/nologin
+    ```bash
+    $ grep -i ROOT /etc/passwd
+    root:x:0:0:root:/root:/bin/bash
+    operator:x:11:0:operator:/root:/sbin/nologin
 
-$ grep -ni ROOT /etc/passwd
-1:root:x:0:0:root:/root:/bin/bash
-10:operator:x:11:0:operator:/root:/sbin/nologin
+    $ grep -ni ROOT /etc/passwd
+    1:root:x:0:0:root:/root:/bin/bash
+    10:operator:x:11:0:operator:/root:/sbin/nologin
 
-$ grep -c nologin /etc/passwd
-37
-```
+    $ grep -c nologin /etc/passwd
+    37
+    ```
 ### 파일의 크기 정보 출력(wc : word count)
 - 특정 파일을 구성하는 단어의 수를 출력
 - 옵션을 통해 문자의 수, 단어 수, 문장의 수까지 출력 가능
@@ -456,10 +462,10 @@ $ grep -c nologin /etc/passwd
   - w : 파일을 구성하는 단어의 수를 출력
   - | : 파일을 구성하는 문장의 수를 출력
   - 옵션 미지정시 문자의 수, 단어의 수, 문장의 수 모두 출력
-```bash
-$ wc /etc/passwd
-  42  83 2192 /etc/passwd
-```
+    ```bash
+    $ wc /etc/passwd
+      42  83 2192 /etc/passwd
+    ```
 
 ## 3. 프로세스 관리
 ### 수행중인 프로세스 상태 출력(ps)
@@ -471,19 +477,19 @@ $ wc /etc/passwd
   - e : -A 옵션과 동일
   - u : 사용자 아이디, 메모리 정보, CPU 정보, 시간 정보를 추가하여 출력
   - f : 사용자의 UID와 부모 프로세스의 PID를 포함한 프로세스 정보를 출력
-```bash
-$ ps -ef | head -5
-UID   PID   PPID   C   STIME   TTY   TIME      CMD
-root  1     0      0   15:34   ?     00:00:02  /user/lin/systemd/systemd --switched-root --system --deserialize 22
-root  2     0      0   15:34   ?     00:00:00  [kthreadd]
-root  3     0      0   15:34   ?     00:00:00  [ksoftirqd/0]
+    ```bash
+    $ ps -ef | head -5
+    UID   PID   PPID   C   STIME   TTY   TIME      CMD
+    root  1     0      0   15:34   ?     00:00:02  /user/lin/systemd/systemd --switched-root --system --deserialize 22
+    root  2     0      0   15:34   ?     00:00:00  [kthreadd]
+    root  3     0      0   15:34   ?     00:00:00  [ksoftirqd/0]
 
-$ ps -aux | head -5
-USER   PID  %CPU   %MEM   VSZ     RSS   TTY   STAT  START   TIME    COMMAND
-root   1    0.0    0.3    128160  6756  ?   Ss    15:34   0:02    /usr/lib/systemd/systemd --switched-root --system --deserialize 22
-root   2    0.0   0.0     0       0     ?     S     15:34   0:00    [kthreadd]
-root   3    0.0   0.0     0       0     ?     S     15:34   0:00    [ksoftirqd/0]  
-```
+    $ ps -aux | head -5
+    USER   PID  %CPU   %MEM   VSZ     RSS   TTY   STAT  START   TIME    COMMAND
+    root   1    0.0    0.3    128160  6756  ?   Ss    15:34   0:02    /usr/lib/systemd/systemd --switched-root --system --deserialize 22
+    root   2    0.0   0.0     0       0     ?     S     15:34   0:00    [kthreadd]
+    root   3    0.0   0.0     0       0     ?     S     15:34   0:00    [ksoftirqd/0]  
+    ```
 
 ### 수행 중인 프로세스의 계층 구조 출력(pstree)
 - 시스템에 존재하는 부모 프로세스와 자식 프로세스 간의 계층 구조를 보여주는 기능
@@ -492,8 +498,7 @@ root   3    0.0   0.0     0       0     ?     S     15:34   0:00    [ksoftirqd/0
   - c : 동일한 하위 디렉토리를 축약하지 않고 모두 출력
   - h : 현재 수행 중인 부모 프로세스와 자식 프로세스를 진하게 표시
   - p : 프로세스 계층 구조에 PID를 포함해서 출력
-  
-![pstree](/img/img05.png)
+    ![pstree](/img/img05.png)
 
 ### 프로세스의 실행 정보 출력(top)
 - 프로세스의 실행 상태를 실시간으로 확인할 수 있는 명령
@@ -504,37 +509,37 @@ root   3    0.0   0.0     0       0     ?     S     15:34   0:00    [ksoftirqd/0
   - i : Zombie나 idle 상태의 프로세스는 제외하고 출력
   - n 회수 : 지정된 회수만큼만 실행 현황을 갱신하여 출력
   - u 사용자 : 지정된 사용자 계정이 수행하는 프로세스 정보를 출력
-```bash
-$ top
-top - 16:20:45 up 45 min, 1 user, load average: 0.17, 0.08, 0.06
-Tasks: 150 total, 1 running, 149 sleeping, 0 stopped, 0 zombie
-%Cpu(s): 5.9 us, 5.9 sy, 0.0 ni, 88.2 id, 0.0 wa, 0.0 hi, 0.0 si, 0.0 st
-KiB Mem : 1882836 total, 933256 free, 348096 used, 601484 buff/cache
-KiB Swap : 2097148 total, 2097148 free,  0 used. 1336524 avail Mem
+    ```bash
+    $ top
+    top - 16:20:45 up 45 min, 1 user, load average: 0.17, 0.08, 0.06
+    Tasks: 150 total, 1 running, 149 sleeping, 0 stopped, 0 zombie
+    %Cpu(s): 5.9 us, 5.9 sy, 0.0 ni, 88.2 id, 0.0 wa, 0.0 hi, 0.0 si, 0.0 st
+    KiB Mem : 1882836 total, 933256 free, 348096 used, 601484 buff/cache
+    KiB Swap : 2097148 total, 2097148 free,  0 used. 1336524 avail Mem
 
-PID   USER  PR  NI  VIRT    RES   SHR   S %CPU  %MEM  TIME+   COMMAND
-2658  root  20  0   161972  2192  1528  R 6.2   0.1   0:00.01 top
-1     root  20  0   128160  6756  4104  S 0.0   0.4   0:02.64 systemd
-2     root  20  0   0       0     0     S 0.0   0.0   0:00.00 kthreadd
-3     root  20  0   0       0     0     S 0.0   0.0   0:00.17 ksoftirqd/0
-5     root  0  -20  0       0     0     S 0.0   0.0   0:00.00 kworker/0:0H
-```
+    PID   USER  PR  NI  VIRT    RES   SHR   S %CPU  %MEM  TIME+   COMMAND
+    2658  root  20  0   161972  2192  1528  R 6.2   0.1   0:00.01 top
+    1     root  20  0   128160  6756  4104  S 0.0   0.4   0:02.64 systemd
+    2     root  20  0   0       0     0     S 0.0   0.0   0:00.00 kthreadd
+    3     root  20  0   0       0     0     S 0.0   0.0   0:00.17 ksoftirqd/0
+    5     root  0  -20  0       0     0     S 0.0   0.0   0:00.00 kworker/0:0H
+    ```
 
 ### 프로세스의 종료(kill)
 - 프로세스는 수행을 완료하면 자동 소면
 - 실행을 마친 프로세스가 종료되지 않으면 $\rightarrow$ Zombie
 - kill 명령어를 사용하여 프로세스 종료
-```bash
-$ sleep 1000 &
-[1] 8788
-$ kill -s INT 8788
- [1]+ Interrupt       sleep 1000
+  ```bash
+  $ sleep 1000 &
+  [1] 8788
+  $ kill -s INT 8788
+  [1]+ Interrupt       sleep 1000
 
-$ sleep 1000 &
-[1] 8792
-$ kill -9 87
-[1]+ Killed           sleep 1000
-```
+  $ sleep 1000 &
+  [1] 8792
+  $ kill -9 87
+  [1]+ Killed           sleep 1000
+  ```
 # III. 쉘 환경
 ## 1. 쉘
 ### 쉘이란
@@ -545,42 +550,42 @@ $ kill -9 87
 
 ### Environment Variable
 - 쉘은 변수를 통해서 동작하는 방법을 정의
-```bash
-$ NAME = value
-$ env     (환경 변수 확인)
-$ set     (지역 변수 확인 + 환경변수)
-$ unset NAME
-```
-- PATH : Executable search path
-- TERM : Login terminal type (e.g. vt100, xterm)
-- SHELL : Path to login shell (e.g. /bin/sh)
-- HOME : Path to login home directory
-- USER : Username of user
-- PWD : Path to current working directory
-- PS1 : Primary prompt string
-- HISTFILE : history file 위치
-- HISTSIZE  : 메모리 버퍼 저장할 히스토리 수
+  ```bash
+  $ NAME = value
+  $ env     (환경 변수 확인)
+  $ set     (지역 변수 확인 + 환경변수)
+  $ unset NAME
+  ```
+  - PATH : Executable search path
+  - TERM : Login terminal type (e.g. vt100, xterm)
+  - SHELL : Path to login shell (e.g. /bin/sh)
+  - HOME : Path to login home directory
+  - USER : Username of user
+  - PWD : Path to current working directory
+  - PS1 : Primary prompt string
+  - HISTFILE : history file 위치
+  - HISTSIZE  : 메모리 버퍼 저장할 히스토리 수
   
 ### 리눅스 환경 설정 파일
 - 임의의 환경 변수를 영구적으로 사용하기 위해 특정 파일에 기록
-```bash
-/etc/profile
- - 시스템 로그인 과정에서 모든 사용자가 사용하는 환경설정 파일
- - 시스템 전역 쉘 변수들을 초기화
+  ```bash
+  /etc/profile
+  - 시스템 로그인 과정에서 모든 사용자가 사용하는 환경설정 파일
+  - 시스템 전역 쉘 변수들을 초기화
 
-/etc/bashrc
- - /etc/profile에 의해서 선택적으로 호출
- - 일반적인 쉘 함수와 alias, umask 등 선택
+  /etc/bashrc
+  - /etc/profile에 의해서 선택적으로 호출
+  - 일반적인 쉘 함수와 alias, umask 등 선택
 
-~/.bash_profile (~/.bash_login → ~/.profile)
- - 각 계정별로 사용할 환경 설정을 기록
+  ~/.bash_profile (~/.bash_login → ~/.profile)
+  - 각 계정별로 사용할 환경 설정을 기록
 
-~/.bashrc
- - 사용자 개인의 쉘 옵션, alias, 변수 정보를 기록
+  ~/.bashrc
+  - 사용자 개인의 쉘 옵션, alias, 변수 정보를 기록
 
-~/.bash_logour
- - 계정이 로그아웃 할 경우 참고
-```
+  ~/.bash_logour
+  - 계정이 로그아웃 할 경우 참고
+  ```
 
 ## 2. 쉘 표준 입출력
 ### 리다이렉션
@@ -588,73 +593,72 @@ $ unset NAME
 - 출력 / 입력으로 지정된 파일이 이미 존재하는 경우는 overwrite
 - 출력 / 입력으로 지정된 파일에 내용을 추가하는 경우
 - $>>$ 기호를 사용하여 붙여 넣을 수 있다.
-  
-|리다이렉션 기호|의미|
-|--|--|
-|<|입력 방향을 재지정|
-|>|출력 방향을 재지정|
-|2>|오류 방향을 재지정|
-|&>|표준출력 + 표준오류 동시 재지정|
-```bash
-$ date  > date.out
-$ cat date.out
-2018. 07. 22. (일) 15:50:37 KST
-$ who > date.out
-$ cat date.out
-root    pts/0     2018-07-22 15:43 (gateway)
-$ date >> date.out
-$ cat date.out
-root    pts/0     2018-07-22  15:43 (gateway)
-2018. 07. 22. (일) 15:51:00 KST
-```
+  |리다이렉션 기호|의미|
+  |--|--|
+  |<|입력 방향을 재지정|
+  |>|출력 방향을 재지정|
+  |2>|오류 방향을 재지정|
+  |&>|표준출력 + 표준오류 동시 재지정|
+  ```bash
+  $ date  > date.out
+  $ cat date.out
+  2018. 07. 22. (일) 15:50:37 KST
+  $ who > date.out
+  $ cat date.out
+  root    pts/0     2018-07-22 15:43 (gateway)
+  $ date >> date.out
+  $ cat date.out
+  root    pts/0     2018-07-22  15:43 (gateway)
+  2018. 07. 22. (일) 15:51:00 KST
+  ```
 - filter 명령어 : 표준입력을 받아 처리를 마치고 표준출력으로 만드는 명령어
   - ex) more, cat, grep, sort, cut, paster ...
-```bash
-$ cat > file1
-This is a file1
-$ cat < file1
-This is a file1
-```
+    ```bash
+    $ cat > file1
+    This is a file1
+    $ cat < file1
+    This is a file1
+    ```
 ### 파이프(pipe)
 - 한 명령어의 수행 결과가 다른 명령의 입력으로 사용되도록 하는 것
 - | 기호를 사용
-```bash
-$ grep root /etc/passwd|cut -f1,6 -d:
-root:/root
-operator:/root
-$ grep nologin /etc/passwd|wc -l
-37
-$ cut -f1 -d: /etc/passwd|head -5|sort
-adm
-bin
-daemon
-lp
-root
-$ grep nologin /etc/passwd|cut -f1 -d: > nologin.out
-```
+  ```bash
+  $ grep root /etc/passwd|cut -f1,6 -d:
+  root:/root
+  operator:/root
+  $ grep nologin /etc/passwd|wc -l
+  37
+  $ cut -f1 -d: /etc/passwd|head -5|sort
+  adm
+  bin
+  daemon
+  lp
+  root
+  $ grep nologin /etc/passwd|cut -f1 -d: > nologin.out
+  ```
 
 ### 한줄에 여러 명령어 입력(;)
-```bash
-# date ; who
-2018. 12. 19(수) 00:16:03 KST
-root    :0    2018-12-18 17:45 (:0)
-root    pts/0 2018-12-18 17:46 (10.0.2.2)
-```
+  ```bash
+  # date ; who
+  2018. 12. 19(수) 00:16:03 KST
+  root    :0    2018-12-18 17:45 (:0)
+  root    pts/0 2018-12-18 17:46 (10.0.2.2)
+  ```
 
 ### 앞에서 실행한 명령의 결과에 따라 다음 명령어 실행(||, &&)
-```bash
-# || /etc/passwd||cp a b
--rw-r--r--. 1 root root 2200 12월 18 22:52 /etc/passwd
-# cp a b|| || /etc/passwd
-cp: cannot stat 'a': 그런 파일이나 디렉토리가 없습니다
--rw-r--r--. 1 root root 2200 12월 18 22:52 /etc/passwd
+  ```bash
+  # || /etc/passwd||cp a b
+  -rw-r--r--. 1 root root 2200 12월 18 22:52 /etc/passwd
+  # cp a b|| || /etc/passwd
+  cp: cannot stat 'a': 그런 파일이나 디렉토리가 없습니다
+  -rw-r--r--. 1 root root 2200 12월 18 22:52 /etc/passwd
 
-#||/etc/passwd && cp a b
--rw-r--r--. 1 root root 2200 12월 18 22:52 /etc/passwd
-cp: cannot stat 'a': 그런 파일이나 디렉토리가 없습니다
-# cp a b && ||/etc/passwd
-cp: cannot stat 'a': 그런 파일이나 디렉토리가 없습니다
-```
+  #||/etc/passwd && cp a b
+  -rw-r--r--. 1 root root 2200 12월 18 22:52 /etc/passwd
+  cp: cannot stat 'a': 그런 파일이나 디렉토리가 없습니다
+  # cp a b && ||/etc/passwd
+  cp: cannot stat 'a': 그런 파일이나 디렉토리가 없습니다
+  ```
 # IV. 리눅스 파일 편집
 ## Vi 편집기
 ### vi 편집기의 시작과 종료
@@ -711,49 +715,49 @@ cp: cannot stat 'a': 그런 파일이나 디렉토리가 없습니다
   - 사용자는 저장소에 접속하여 최신 패키지를 내려받아 설치 (/etc/apt/sources.list)
 - apt-cache
   - apt캐시(repository에 저장된 패키지의 목록과 정보)에서 정보를 검색
-```bash
-# apt-cache stats
- apt 캐시에 대한 전반적인 통계 정보 확인
+  ```bash
+  # apt-cache stats
+  apt 캐시에 대한 전반적인 통계 정보 확인
 
-# apt-cache pkgnames
- 사용 가능한 전체 패키지의 목록을 출력
+  # apt-cache pkgnames
+  사용 가능한 전체 패키지의 목록을 출력
 
-# apt-cache search vsftpd
- 패키지를 설치하기 전에 패키지의 이름과 간단한 설명을 검색
+  # apt-cache search vsftpd
+  패키지를 설치하기 전에 패키지의 이름과 간단한 설명을 검색
 
-# apt-cache show vsftpd
- 버전, 패키지 크기, 카테고리, 체크섬 등 패키지에 관한 정보를 자세하게 출력
+  # apt-cache show vsftpd
+  버전, 패키지 크기, 카테고리, 체크섬 등 패키지에 관한 정보를 자세하게 출력
 
-# apt-cache showpkg vsftpd
- 패키지의 의존성에 대한 정보를 검색
-```
+  # apt-cache showpkg vsftpd
+  패키지의 의존성에 대한 정보를 검색
+  ```
 - apt-get
-> 패키지 저장소(repository)의 정보를 업데이트하고 패키지를 설치하거나 제거할때 사용하는 명령
-```bash
-# apt-get update
- /etc/apt/sources.list 에 명시한 저장소로부터 패키지 정보를 읽어 동기화(업데이트)
+  > 패키지 저장소(repository)의 정보를 업데이트하고 패키지를 설치하거나 제거할때 사용하는 명령
+    ```bash
+    # apt-get update
+    /etc/apt/sources.list 에 명시한 저장소로부터 패키지 정보를 읽어 동기화(업데이트)
 
-# apt-get install vsftpd
- 하나 이상의 패키지를 설치하거나 업그레이드 할 때 사용
+    # apt-get install vsftpd
+    하나 이상의 패키지를 설치하거나 업그레이드 할 때 사용
 
-# apt-get remove vsftpd
- 설치된 패키지를 삭제할 때 사용, --purge 옵션 추가로 설정파일까지 모두 삭제
+    # apt-get remove vsftpd
+    설치된 패키지를 삭제할 때 사용, --purge 옵션 추가로 설정파일까지 모두 삭제
 
-# apt-get autoremove
- 특정 패키지의 의존성문제로 함께 설치되었지만, 더 이상 필요하지 않은 패키지를 일괄 삭제할 때
+    # apt-get autoremove
+    특정 패키지의 의존성문제로 함께 설치되었지만, 더 이상 필요하지 않은 패키지를 일괄 삭제할 때
 
-# apt-get clean
- 설치하는 과정에서 다운로드 받은 파일들을 삭제하고 디스크 공간을 정리
+    # apt-get clean
+    설치하는 과정에서 다운로드 받은 파일들을 삭제하고 디스크 공간을 정리
 
-# apt-get download vsftpd
- 패키지를 설치하지 않고 다운로드만 진행
-```
+    # apt-get download vsftpd
+    패키지를 설치하지 않고 다운로드만 진행
+    ```
 - apt list
-> 설치된 패키지의 목록을 조회하기 위해서 사용
-```bash
-# apt list --installed
- 이미 설치된 패키지 목록을 출력
+  > 설치된 패키지의 목록을 조회하기 위해서 사용
+    ```bash
+    # apt list --installed
+    이미 설치된 패키지 목록을 출력
 
-# apt list --upgradable
- apt-get upgrade 시 업그레이드가 될 패키지 목록을 출력
-```
+    # apt list --upgradable
+    apt-get upgrade 시 업그레이드가 될 패키지 목록을 출력
+    ```
