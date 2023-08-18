@@ -76,6 +76,59 @@ print(varNum)
 - 순서가 없어서 인덱싱, 슬라이싱 불가
 
 ### 함수
+- 예약어 목록
+```py
+import keyword
+keyword.kwlist
+>>
+# if 반복문
+if
+elif : 실행문1이 False일때 elif 다음의 조건문
+else : if문의 실행문1이 False일 경우~
+
+# while 반복문
+while
+pass
+break : 반복문 중단
+continue : 
+
+# 논리
+False : 논리연산자 불일치
+True : 논리연산자 일치
+and : 논리 곱(~ 이고 ~)
+not
+or
+in
+is
+
+# 함수
+def : 함수 시작
+class : 클래스 객체
+lambda
+return
+
+
+# 모듈
+import
+from
+as : 모듈약칭 설정
+
+None : 값이 없음
+assert : 
+async
+await
+del
+finally
+for
+global
+nonlocal
+raise
+try
+except : 
+
+with
+yield
+```
 - `.keys()` : 딕셔너리의 키값을 반환
 - `.values()` : 딕셔너리의 밸류값을 반환
 - `items()` : 딕셔너리의 키와 밸류값을 동시에 반환
