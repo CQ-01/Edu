@@ -81,10 +81,13 @@ print(varNum)
 import keyword
 keyword.kwlist
 >>
-# if 반복문
+# if 조건문
 if
 elif : 실행문1이 False일때 elif 다음의 조건문
 else : if문의 실행문1이 False일 경우~
+
+# for 반복문
+for
 
 # while 반복문
 while
@@ -114,17 +117,21 @@ from
 as : 모듈약칭 설정
 
 None : 값이 없음
-assert : 
-async
-await
-del
-finally
-for
-global
-nonlocal
-raise
+
+# 예외처리
 try
 except : 
+finally : 에러가 나더라도 이후문장 실행
+
+assert : 가정 설정문?
+async : 비동기 프로그래밍?
+await
+
+del : 값 제거
+
+global : 전역변수로 지정
+nonlocal
+raise
 
 with
 yield
