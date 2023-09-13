@@ -1,3 +1,4 @@
+# I. 바이오 인포매틱스 개요
 ## 필요 지식
 - 통계(수리통계, 회귀분석, R)
 - 컴공(이산수학, 데이터)
@@ -7,41 +8,62 @@
 - 도구 : R, Python
 - 항암 표적물질 발굴
 - 기본 유전체 표준 Reference 제작
-- SNP : 단일 염기서열 변화
 
-## 테라젠바이오
-- 업계 1위 마크로젠은 공장처럼 돌아가는 분위기?
-- 개인 능력 향상과 하고 싶은 일을 하기 위해 선택
-- K-DNA 사업 등 국책과제가 제일 많음
+## 실무
+- PCR ~ NGS
+- 한양대 융합생명공학등 융합학부가 늘어나는 추세
+- 방대한 분량을 혼자 다 배울 수는 없기에; 휴먼 네트워크가 중요
+- 마크로젠, 테라젠, DNA링크, 휴앤바이옴(미생물 쪽)
 
-PCR ~ NGS
-한양대 융합생명공학
+# II. 분자 생물학 기초
+## 1. Central Dogma
+### DNA
+> 생명체의 설계도
+- 하나의 세포당 1 copy 존재한다
+- 이중나선의 안정적 구조, A, G, C, T 염기서열로 구성
+- 복제 중 오류 발생 시 repair 기작이 발달
+  - mutation 발생 시 암 발생
+- 전체 DNA 중 3~5%만 실제 RNA 및 단백질로 발현된다(=exome)
+- DNA 영역을 전체 sequencing 하는 WGRS
+- 실제 코딩이 진행되는 영역만을 시퀀싱하는 WES
+- 특정 타깃만을 시퀀싱하는 Target sequencing
+- cDNA : 한번 전사되었던 RNA를 DNA로 되돌림 (실험 등 목적으로 RNA를 안정적으로 유지하기 위함)
+  - coding되지 않은 DNA서열이 존재하지 않음
+  - 현대의 sequencer가 ATGC 서열만 해독 가능하기 때문에 활용
+  
+### RNA
+> 단백질의 중간과정으로 여겨졌으나 자체적으로 효소로 작용하는 등 특이기능 연구 중
+- A, G, C, U의 염기서열로 구성, 단일가닥으로 존재하여 불안정한 구조
+- 단백질로 전환이 되는 mRNA, 염기서열과 일치하는 단백질을 옮기는 tRNA, 리보솜을 구성하는 rRNA 등
+- 하나의 DNA 서열로부터 여러개의 RNA transcript가 생겨날 수 있다
+  - RNA 성숙과정에서 엑손들의 배치 순서 및 포함여부 결정
+- RNA maturation : pre-mRNA에서 인트론 서열이 제거되는 과정
+- mRNA는 RNA maturation 완료 후 3' end 쪽에 poly-A tail이 capping 된다(RNA 분해효소 기능 억제)
+- transcription factor(TF) 단백질, RNA polymerase 단백질이 전사를 돕는다
+  - RNA 연구 시 굉장히 중유하게 고려해야할 요소
+- miRNA : dicer protein과 결합하여 스스로와 상보적인 서열을 가지는 RNA 서열을 절단함으로서 발현 조절
 
-생물정보학 _ 인공지능 _ 의생명 데이터사이언스
-융합 sw(데이터 사이언스)
-혼자 다 배울 수는 없다; 휴먼 네트워크
+### Protein
+> 최종적으로 생체 내 현상을 매개하는 분자단계
+- 세 개의 RNA 서열로부터 아미노산 서열을 합성(codon)
+- mRNA에 리보솜이 결합하여 상보적인 tRNA가 배달하는 아미노산들이 하나의 가닥으로 조립됨
 
-마크로젠 테라젠 DNA링크
-휴앤바이옴(미생물 쪽)
+### Insight
+- DNA는 특정한 조건이 아닌 이상 일정한 수를 유지하며, 생체 과정을 매개할 때 양이 변화하는 것은 RNA, Protein
+- RNA나 Protein의 발현량이 변화했다
+- 분자 단계의 발현량 변화가 최종적으로 어떠한 표현형(눈에 보이는 형질)의 변화로 이어진다
 
-하수처리
-원폭피해자
-유기견나이(다른 종들의 같은 바이오마커 찾는 과정이 힘들었음)
+### genome 사이즈
+  - 인간 : 30억 Base Pair(염기의 수)
+  - genome 사이즈가 크다고 고등동물임을 뜻하는 것은 아님
+  - 자이언트 세콰이어나 아홀로틀 샐러맨더는 인간의 몇배에 달하는 BP
 
-후성유전체학!
+### 단일염기다형성(SNP)
+  - 하나의 염기가 다른 염기로 대체되며 나타나는 변이
+  - 모노모피즘 : 특정 염기 위치에서 대체로 모든 개체가 동일한 염기를 가짐
 
-## NGS
-- 이전에는 700~1000개 base pair 밖에 읽을 수 없었음
-- downstream analysis : 시퀀싱 과정이 편해짐에 따라 중요도 가중
-  - 시퀀싱데이터 해석할 수 있을 뿐만 아니라 생물학적 통찰을 찾을 수 있는 사람
-- 실제 작용하는 건 RNA, 단백질이나 DNA ~ RNA 서열만 읽을 수 있음
-- biological replicate 우선, technical replicate 차선
-- fastq : 151bp 염기서열
-- normalization은 필수, 연구자들 사이에 합의가 이루어짐
-- NGS 데이터 생산은 점점 쉬워지나, 적합한 분석을 할 줄 아는 것은 더 어려워진다
-- 
-
-## EDA
+# III. 데이터 분석 과정
+## 1. EDA
 > 탐색적 데이터 분석, 데이터를 처음 접하는 사람들이 데이터의 구조와 패턴을 파악하기 위해 사용, 견적을 내는 일
 - 획득한 데이터에 대해 critic한 태도를 유지
 
@@ -82,42 +104,15 @@ PCR ~ NGS
 - Positive control : 분석이 올바르게 수행되었다면 이 값이 반드시 도출됨
 - bulk RNA-seq $\rightarrow$ scRNA-seq
 
-## Central Dogma
-### DNA
-> 생명체의 설계도
-- 하나의 세포당 1 copy 존재한다
-- 이중나선의 안정적 구조, A, G, C, T 염기서열로 구성
-- 복제 중 오류 발생 시 repair 기작이 발달
-  - mutation 발생 시 암 발생
-- 전체 DNA 중 3~5%만 실제 RNA 및 단백질로 발현된다(=exome)
-- DNA 영역을 전체 sequencing 하는 WGRS
-- 실제 코딩이 진행되는 영역만을 시퀀싱하는 WES
-- 특정 타깃만을 시퀀싱하는 Target sequencing
-- cDNA : 한번 전사되었던 RNA를 DNA로 되돌림 (실험 등 목적으로 RNA를 안정적으로 유지하기 위함)
-  - coding되지 않은 DNA서열이 존재하지 않음
-  - 현대의 sequencer가 ATGC 서열만 해독 가능하기 때문에 활용
-  
-### RNA
-> 단백질의 중간과정으로 여겨졌으나 자체적으로 효소로 작용하는 등 특이기능 연구 중
-- A, G, C, U의 염기서열로 구성, 단일가닥으로 존재하여 불안정한 구조
-- 단백질로 전환이 되는 mRNA, 염기서열과 일치하는 단백질을 옮기는 tRNA, 리보솜을 구성하는 rRNA 등
-- 하나의 DNA 서열로부터 여러개의 RNA transcript가 생겨날 수 있다
-  - RNA 성숙과정에서 엑손들의 배치 순서 및 포함여부 결정
-- RNA maturation : pre-mRNA에서 인트론 서열이 제거되는 과정
-- mRNA는 RNA maturation 완료 후 3' end 쪽에 poly-A tail이 capping 된다(RNA 분해효소 기능 억제)
-- transcription factor(TF) 단백질, RNA polymerase 단백질이 전사를 돕는다
-  - RNA 연구 시 굉장히 중유하게 고려해야할 요소
-- miRNA : dicer protein과 결합하여 스스로와 상보적인 서열을 가지는 RNA 서열을 절단함으로서 발현 조절
-
-### Protein
-> 최종적으로 생체 내 현상을 매개하는 분자단계
-- 세 개의 RNA 서열로부터 아미노산 서열을 합성(codon)
-- mRNA에 리보솜이 결합하여 상보적인 tRNA가 배달하는 아미노산들이 하나의 가닥으로 조립됨
-
-### Insight
-- DNA는 특정한 조건이 아닌 이상 일정한 수를 유지하며, 생체 과정을 매개할 때 양이 변화하는 것은 RNA, Protein
-- RNA나 Protein의 발현량이 변화했다
-- 분자 단계의 발현량 변화가 최종적으로 어떠한 표현형(눈에 보이는 형질)의 변화로 이어진다
+## 2. NGS
+- 이전에는 700~1000개 base pair 밖에 읽을 수 없었음
+- downstream analysis : 시퀀싱 과정이 편해짐에 따라 중요도 가중
+  - 시퀀싱데이터 해석할 수 있을 뿐만 아니라 생물학적 통찰을 찾을 수 있는 사람
+- 실제 작용하는 건 RNA, 단백질이나 DNA ~ RNA 서열만 읽을 수 있음
+- biological replicate 우선, technical replicate 차선
+- fastq : 151bp 염기서열
+- normalization은 필수, 연구자들 사이에 합의가 이루어짐
+- NGS 데이터 생산은 점점 쉬워지나, 적합한 분석을 할 줄 아는 것은 더 어려워진다
 
 ## RNA-seq
 ### 순서
@@ -236,25 +231,8 @@ Technician vs Scientist, 당연히 생물학적 인사이트에 중점을 두어
 |한정된 용량|유연한 용량|
 |많은 공수 및 소요시간|적은 노력 및 소요시간|
 
-
----
-
-## 용어 설명
-### genome 사이즈
-  - 인간 : 30억 Base Pair(염기의 수)
-  - genome 사이즈가 크다고 고등동물임을 뜻하는 것은 아님
-  - 자이언트 세콰이어나 아홀로틀 샐러맨더는 인간의 몇배에 달하는 BP
-
-### 단일염기다형성(SNP)
-  - 하나의 염기가 다른 염기로 대체되며 나타나는 변이
-  - 모노모피즘 : 특정 염기 위치에서 대체로 모든 개체가 동일한 염기를 가짐
-
-## Question
+# Question
 - 시퀀싱 과정에서 염기서열들이 무작위로 뒤섞이는데 본래의 위치를 찾는 방법?
-
----
-
-scRNA-seq시에 
 
 ### 10x
 파이프라인 제공(cell ranger)
@@ -316,36 +294,36 @@ UMAP
 ### Dimplot
 
 ## Target Panel
-WGS : depth를 얼마만큼 해독을 해야 하나? 30x 이상(homo hetero변화 잡기 위해)
+- WGS : depth를 얼마만큼 해독을 해야 하나? 30x 이상(homo hetero변화 잡기 위해)
 WES : 희귀한 돌연변이들을 잡기 위해서는 ~60000x 까지 해봐야
 팩바이오 장비 > 시퀄
 
-splice accept : 스플라이소좀이 gt at서열을 인지해 intron 제거
+- splice accept : 스플라이소좀이 gt at서열을 인지해 intron 제거
 WGS : 
-긴 사이즈를 depth 있게 확인하기 어려움(mutation은 WES가 유리)
-genome 전반적으로 구조적인 변이를 보기는 좋음
+- 긴 사이즈를 depth 있게 확인하기 어려움(mutation은 WES가 유리)
+- genome 전반적으로 구조적인 변이를 보기는 좋음
 
-germline mutation : 선천적 돌연변이(생식세포 돌연변이)
-somatic mutation : 후천적 돌연변이(체세포 돌연변이)
+- germline mutation : 선천적 돌연변이(생식세포 돌연변이)
+- somatic mutation : 후천적 돌연변이(체세포 돌연변이)
 
-somatic mutation call
-  single nucleotide variant
-  short indels
-  structual variant
-  copy number(copyno)
+- somatic mutation call
+  - single nucleotide variant
+  - short indels
+  - structual variant
+  - copy number(copyno)
 
-영향주는 요인
-  세포분열
-    노화
-  환경
-    aflatoxin
+- 영향주는 요인
+  - 세포분열
+  - 노화
+- 환경
+  - aflatoxin
 
-Exome/target capture
-미리 exome과 상보적인 RNA서열들을 만들어 놓은 뒤 자성을 띄게 한다
-자석으로 RNA서열과 결합한 exome들을 가져와 seq
+- Exome/target capture
+  - 미리 exome과 상보적인 RNA서열들을 만들어 놓은 뒤 자성을 띄게 한다
+  - 자석으로 RNA서열과 결합한 exome들을 가져와 seq
 
-Exome/target analysis pipeline
-PCR duplication : 동일한 서열들은 PCR로 증폭된 같은 서열들로 bias를 줄 수 있기 때문에 정리
+- Exome/target analysis pipeline
+- PCR duplication : 동일한 서열들은 PCR로 증폭된 같은 서열들로 bias를 줄 수 있기 때문에 정리
 
 ### Padigree(가계도)
 - 상염색체 우성유전
@@ -354,11 +332,11 @@ PCR duplication : 동일한 서열들은 PCR로 증폭된 같은 서열들로 bi
 NCBI >> ClinVar
 - variant DB
 
-돌연변이의 종류
-missense mutation : 서열이 바뀌어 아미노산이 달라짐 
-nonsense mutation : 스탑 코돈 유발
-silent mutation : 코드는 바뀌었으나 영향x
-frameshift mutation : 염기서열 해독이 하나씩 밀림
+- 돌연변이의 종류
+  - missense mutation : 서열이 바뀌어 아미노산이 달라짐 
+  - nonsense mutation : 스탑 코돈 유발
+  - silent mutation : 코드는 바뀌었으나 영향x
+  - frameshift mutation : 염기서열 해독이 하나씩 밀림
 
 coding DNA : c.
 genomic DNA : g.
@@ -367,9 +345,6 @@ RNA : r.
 Protein : p.
 
 NM number : RNA식별 번호
-
-책 추천
-질병 유전체 분석법
 
 ACMG 가이드라인 한번 읽어 볼 것
 
