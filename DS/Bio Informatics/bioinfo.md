@@ -167,10 +167,10 @@ DEG분석
 
 - 세대로 구분하나, 차 세대가 이전세대를 완벽히 커버하는 것은 아님
 
-분자생물학과 전반적인 워크플로우
-BI, 하이브리드 직종으로 컴퓨터사이언스, 생물학적 인사이트 중 어느곳에 중점을 두어야 하는가
-Technician vs Scientist, 당연히 생물학적 인사이트에 중점을 두어야 한다
-컴퓨터사이언스는 보조할 수 있는 수단들이 많다.
+- 분자생물학과 전반적인 워크플로우
+  - BI, 하이브리드 직종으로 컴퓨터사이언스, 생물학적 인사이트 중 어느곳에 중점을 두어야 하는가
+  - Technician vs Scientist, 당연히 생물학적 인사이트에 중점을 두어야 한다
+  - 컴퓨터사이언스는 보조할 수 있는 수단들이 많다.
 
 ## 분석 논문
 - 논리전개 방식을 알아두기
@@ -338,43 +338,39 @@ NCBI >> ClinVar
   - silent mutation : 코드는 바뀌었으나 영향x
   - frameshift mutation : 염기서열 해독이 하나씩 밀림
 
-coding DNA : c.
-genomic DNA : g.
-mito DNA : m.
-RNA : r.
-Protein : p.
+|종류|기호|
+|--|--|
+|coding DNA|c.|
+|genomic DNA|g.|
+|mito DNA|m.|
+|RNA|r.|
+|Protein|p.|
 
-NM number : RNA식별 번호
+- NM number : RNA식별 번호
 
-ACMG 가이드라인 한번 읽어 볼 것
+- ACMG 가이드라인 한번 읽어 볼 것
 
-관련 DB
-dbSNP
-ExAC
-ClinVar
-1000 genome project
-OMIM
+- 관련 DB
+  -dbSNP, ExAC, ClinVar, 1000 genome project, OMIM
 
-액체 생검
+- 액체 생검
 
-병리사 : 백정이다, 암 protein조직을 작게 썰어 파라핀(촛농)에 심어 놓는다
+- 병리사 : 백정이다, 암 protein조직을 작게 썰어 파라핀(촛농)에 심어 놓는다
 최소 시료량 : 슬라이드4 micron 10장, DNA > 100ng, 4cc EDTA tube 1개
-NGS < 암을 정복하기 위해 
+- NGS < 암을 정복하기 위해 
 
-TIL(tumor-infiltrating lymphocyte) vs immune desert
-:종양에 면역세포가 모여있는지 여부
+- TIL(tumor-infiltrating lymphocyte) vs immune desert : 종양에 면역세포가 모여있는지 여부
 
-immuno therapy
-: 종양에 면역세포가 많이 모여있는지 아닌지 여부에 따라, 돌연변이 양이 많은지 적은지 여부에 따라 치료방법이 달라져야 한다
+- immuno therapy : 종양에 면역세포가 많이 모여있는지 아닌지 여부에 따라, 돌연변이 양이 많은지 적은지 여부에 따라 치료방법이 달라져야 한다
 
-면역항암제, 마이크로바이옴, 알츠하이머
-장 환경이 뇌와 연관되어 있다 ; 장내 미생물
-미생물이 약이 된다
+- 면역항암제, 마이크로바이옴, 알츠하이머
+- 장 환경이 뇌와 연관되어 있다 ; 장내 미생물
+- 미생물이 약이 된다
 
-혈액이나 타액에는 cell이 많아 host cell의 DNA가 많이 나온다, 분변에는 bacteria들이 많이 나옴
+- 혈액이나 타액에는 cell이 많아 host cell의 DNA가 많이 나온다, 분변에는 bacteria들이 많이 나옴
 
-벼 조차 4만개의 유전자를 보유하는데 인간은 2만개에, life cycle에 많이 관여하는 것은 2천개 뿐. 나머지는 체내의 미생물의 역할로 보완
-미생물이 많이 서식하는 곳 : 피부, 소화계(구강~항문), 호흡계, 장
+- 벼 조차 4만개의 유전자를 보유하는데 인간은 2만개에, life cycle에 많이 관여하는 것은 2천개 뿐. 나머지는 체내의 미생물의 역할로 보완
+- 미생물이 많이 서식하는 곳 : 피부, 소화계(구강~항문), 호흡계, 장
   외래 인자에 항상 노출되는 곳에 미생물들이 존재한다(defense 목적)
 
 ## 프로바이오틱스
