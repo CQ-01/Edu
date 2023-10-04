@@ -23,3 +23,12 @@
     |플랫폼|454, illumina MiSeq|illumina HiSeq|
 
 ### 2. Metagenomic 데이터 분석 전략
+- 16s rDNA 유전자 PCR
+    - A. 시퀀싱
+    - B. 낮은 퀄리티나 chimeric reads 제거
+        - C-1. OTU 계산
+            - D. Alpha Diversity(특정 지역이나 환경 내에서 미생물의 다양성을 측정)
+<br></br>            
+        - C-2. 계통 프로파일(RDP, NCBI)
+            - D-1. Beta Diversity()
+            - D-2. 미생물구조 비교
