@@ -32,3 +32,16 @@
         - C-2. 계통 프로파일(RDP, NCBI)
             - D-1. Beta Diversity()
             - D-2. 미생물구조 비교
+
+## III. 전처리
+### 1. 전처리 방법
+- 시퀀싱(MiSeq 이용)
+- Adapter 제거(CutAdapt v1.11)
+- paired end reads 병합(FLASH v1.2.11)
+    - fastq 파일은 양쪽에서 읽은 paired end 두개의 파일로 나온다
+- QC(SICKLE v1.2.11)
+- 키메라 시퀀스 제거(ChimeraSlayer r20110519)
+
+### 2. 시퀀싱 QC
+
+### 3. 전처리 결과
