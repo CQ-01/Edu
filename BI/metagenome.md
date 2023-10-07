@@ -48,3 +48,9 @@
 - &ge; Q20 : 전체 염기서열 중 Q20(정확도 99%)을 넘는 염기의 비율
 
 ### 3. 전처리 결과
+![결과 image](/img/PreproResult.png)
+- No. of Reads : QC 이후 reads 수
+- No. of Bases : QC 이후 염기서열 수
+- Removed chimera reads : 키메라 시퀀스가 제거된 후 reads 수
+- Removed chimera reads(%) : 전체 시퀀스 대비 키메라 시퀀스가 제거된 reads의 비율
+- Removed chimera bases : 키메라 시퀀스가 제거된 염기 수
