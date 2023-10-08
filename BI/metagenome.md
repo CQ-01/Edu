@@ -33,6 +33,7 @@
             - D-1. Beta Diversity()
             - D-2. 미생물구조 비교
 
+
 ## III. 전처리
 ### 1. 전처리 방법
 - 시퀀싱(MiSeq 이용)
@@ -54,3 +55,14 @@
 - Removed chimera reads : 키메라 시퀀스가 제거된 후 reads 수
 - Removed chimera reads(%) : 전체 시퀀스 대비 키메라 시퀀스가 제거된 reads의 비율
 - Removed chimera bases : 키메라 시퀀스가 제거된 염기 수
+
+
+## IV. OTU와 Alpha Diversity
+### 1. OTU와 Alpha Diversity 계산방법
+- A. 전처리 된 시퀀스
+- B. OTU 계산
+    - Qiime에서 pick de novo OTUs(DB 없이 97%이상 유사도 끼리 OTU)
+- C. Alpha Diversity 계산
+    - Shannon 지수(생물 다양성 지수)
+
+### 2. OTU와 Alpha Diversity 계산
