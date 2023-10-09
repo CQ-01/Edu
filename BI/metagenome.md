@@ -66,3 +66,8 @@
     - Shannon 지수(생물 다양성 지수)
 
 ### 2. OTU와 Alpha Diversity 계산
+![](/img/OTU%20AD%20계산.png)
+- No, of Reads : 전처리 된 reads 수
+- OTUs : Qiime을 이용해 97%의 유사도를 통해 클러스터링된 시퀀스로 결정된다
+- Alpha Diversity : 각 샘플의 alpha diversity를 측정하기 위해 shannon지수를 사용해 OTU를 분석했다.
+
