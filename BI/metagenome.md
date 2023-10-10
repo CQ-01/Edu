@@ -1,11 +1,10 @@
 # 16s rDNA metagenome analysis
-## I. 용어 정리
 - 16s rDNA : 미생물이나 세균(archea) 등에서 많이 발견되는 16s(리보솜의 서브유닛의 한 종류) rRNA를 코딩하는 rDNA(리보솜 DNA)의 일부
 - 16s rRNA : 16S라는 서브유닛을 구성하는 ribosomal RNA 
 - metagenomics : 토양 환경 전체 샘플에서 추출된 유전물질에 대한 연구
 
 
-## II. 분석전략
+## I. 분석전략
 ### 1. 시퀀싱 방법
 - A. 환경 샘플 내의 박테리아에서 Community DNA를 추출
 - B-1. 16s rRNA PCR
@@ -34,7 +33,7 @@
             - D-2. 미생물구조 비교
 
 
-## III. 전처리
+## II. 전처리
 ### 1. 전처리 방법
 - 시퀀싱(MiSeq 이용)
 - Adapter 제거(CutAdapt v1.11)
@@ -57,7 +56,7 @@
 - Removed chimera bases : 키메라 시퀀스가 제거된 염기 수
 
 
-## IV. OTU와 Alpha Diversity
+## III. OTU와 Alpha Diversity
 ### 1. OTU와 Alpha Diversity 계산방법
 - A. 전처리 된 시퀀스
 - B. OTU 계산
@@ -71,3 +70,17 @@
 - OTUs : Qiime을 이용해 97%의 유사도를 통해 클러스터링된 시퀀스로 결정된다
 - Alpha Diversity : 각 샘플의 alpha diversity를 측정하기 위해 shannon지수를 사용해 OTU를 분석했다.
 
+## IV. 계통 프로파일링
+### 1. 계통 프로파일링 방법
+- A. 전처리된 시퀀스
+    - B-1(속 분석). 계통 프로파일링(RDP classifier v.2.11)
+        - C. 계통 할당과 krona plot(krona Tools v.2.7)
+        - D. Beta Diversity 계산(Bray-Curtis 거리)
+
+    - B-2(종 분석). 클러스터링
+        - C. 계통 프로파일링(NCBI)
+        - D. 계통 할당과 krona plot(krona Tools v.2.7)
+            - krona plot : 원형 그래프로 분류학적 계층구조를 시각화하는 그래프
+        - E. Beta Diversity 계산
+
+### 2. 계통 프로파일링(RDP)
