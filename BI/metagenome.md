@@ -83,4 +83,10 @@
             - krona plot : 원형 그래프로 분류학적 계층구조를 시각화하는 그래프
         - E. Beta Diversity 계산
 
-### 2. 계통 프로파일링(RDP)
+### 2. 계통 프로파일링
+- RDP
+    ![](img/RDP%20taxpro.png)
+- NCBI
+    ![](img/NCBI%20taxpro.png)
+
+### 3. Beta Diversity
