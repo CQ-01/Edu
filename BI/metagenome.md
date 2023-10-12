@@ -90,3 +90,7 @@
     ![](img/NCBI%20taxpro.png)
 
 ### 3. Beta Diversity
+- RDP
+    ![](img/RDP%20beta.png)
+- NCBI
+    ![](img/NCBI%20beta.png)
