@@ -94,3 +94,34 @@
     ![](img/RDP%20beta.png)
 - NCBI
     ![](img/NCBI%20beta.png)
+
+## V. 데이터 구조
+### 1. 전처리
+- [sample].preprocessed.fasta
+- Preprocessing.summary.xls
+
+### 2. OTU와 Alpha Diversity
+- [sample]_97_OTUs.txt
+- OTUs_AlphaDiversity_Shannon_index.xls
+
+### 3. 계통 프로파일링
+#### RDP
+- [sample]
+    - [sample].rdp.krona.html
+    - [sample].tax
+- RDP.Taxonomy.[taxon rank].xls
+- RDP.Taxonomy.[taxon rank].xls.betadiversity.PCAPlot.png
+- RDP.Taxonomy.[taxon rank].xls.betadiversity.xls
+- RDP.Taxonomy.[taxon rank].xls.heatmap.png
+- RDP.Taxonomy.[taxon rank].xls.MDSPlot.png
+
+#### NCBI
+- [sample]
+    - [sample].ncbi.krona.html
+    - [sample].ncbi.krona.html.files
+    - [sample].ncbi.taxonomy.Annotation.xls
+- NCBI.Taxonomy.[taxon rank].xls
+- NCBI.Taxonomy.[taxon rank].xls.betadiversity.PCAPlot.png
+- NCBI.Taxonomy.[taxon rank].xls.betadiversity.xls
+- NCBI.Taxonomy.[taxon rank].xls.heatmap.png
+- NCBI.Taxonomy.[taxon rank].xls.MDSPlot.png
