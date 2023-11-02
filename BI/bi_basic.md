@@ -232,7 +232,11 @@ DEG분석
 |많은 공수 및 소요시간|적은 노력 및 소요시간|
 
 # Question
-- 시퀀싱 과정에서 염기서열들이 무작위로 뒤섞이는데 본래의 위치를 찾는 방법?
+시퀀싱 과정에서 reads이 무작위로 뒤섞이는데 본래의 위치를 찾는 방법?
+- reference서열이 있는 경우 alignment(매핑된 결과)
+- Denovo assembly의 경우 소프트웨어를 사용하여 초기 contig(서로 겹치는 DNA 조각들의 집합)형성
+- contig를 확장하고 서로 연결하여 더 큰 contig나 scaffold 생성
+- contig나 scaffold에 reads를 매핑
 
 ### 10x
 파이프라인 제공(cell ranger)
@@ -433,3 +437,6 @@ NCBI >> ClinVar
 SNP들이 할 수 있는 설명률이 떨어짐
 intron이나 intergenic발 변이라서 원인변이인지 알 수 없는
 association간의 통계적 관계가 있다면 그것까지 분석은 불가
+
+### 기타
+- GC결합은 AT결합에 비해 높은 결합 에너지를 갖고 열 안정성이 높아 GC-rich서열은 PCR시 bias를 가질 가능성이 높아진다
